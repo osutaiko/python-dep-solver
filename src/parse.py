@@ -41,14 +41,20 @@ def run_conda_cmd(package):
 
     return extracted_data
 
-def get_dep_space(requirements):
-    space = {}
-    for req in requirements:
-        req = re.sub(r"\[.*\]", "", req)
-        if not utils.is_conda_pkg(req):
-            continue
+def parse_reqs(requirements):
+    proj_constraints = {}
+    dep_space = {}
 
-        pkg = re.split(r"[<>=!~]+", req)[0]
-        space[pkg] = run_conda_cmd(pkg)
-    return space
+    for req in requirements:
+        req_clean = re.sub(r"\[.*?\]", "", req).strip()
+        if not utils.is_conda_pkg(req_clean):
+            print(f"[WARNING] not a conda package: {req_clean}")
+            continue
+        
+        req_norm = re.sub(r"([<>=!~]=?|==)", r" \1", req_clean)
+        pkg = re.split(r"[<>=!~]+", req_clean)[0].strip()
+        proj_constraints[pkg] = utils.parse_constraint_str(req_norm)
+        dep_space[pkg] = run_conda_cmd(pkg)
+
+    return proj_constraints, dep_space
     

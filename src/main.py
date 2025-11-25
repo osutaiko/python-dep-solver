@@ -11,11 +11,10 @@ DATA_DIR = PROJECT_ROOT / "data"
 RESULTS_DIR = PROJECT_ROOT / "results"
 
 def solve_project(reqs_txt):
-    project_name = reqs_txt.stem
     requirements = parse.load_reqs_txt(reqs_txt)
-    dep_space = parse.get_dep_space(requirements)
-    # print(json.dumps(dep_space))
-    solution = solver.solve(dep_space)
+    proj_constraints, dep_space = parse.parse_reqs(requirements)
+    print(json.dumps(proj_constraints), json.dumps(dep_space))
+    solution = solver.solve(proj_constraints, dep_space)
 
     return solution
 
