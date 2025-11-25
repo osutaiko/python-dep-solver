@@ -1,5 +1,6 @@
 import subprocess
 import pathlib
+import re
 
 def load_reqs_txt(path):
     deps = []
@@ -26,7 +27,8 @@ def run_conda_cmd(package):
 def get_dep_space(requirements):
     space = {}
     for req in requirements:
-        pkg = req.split("==")[0].strip()
+        req = re.sub(r"\[.*\]", "", req)
+        pkg = re.split(r"[<>=!~]+", req)[0]
         space[pkg] = run_conda_cmd(pkg)
     return space
     

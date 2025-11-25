@@ -1,3 +1,4 @@
+import argparse
 from pathlib import Path
 import datetime
 import json
@@ -18,6 +19,25 @@ def solve_project(reqs_txt):
     return solution
 
 def main():
+    parser = argparse.ArgumentParser(description="Dependency Solver")
+    parser.add_argument(
+        "--file",
+        type=str,
+        help="Run solver on a specified requirements.txt file (path)",
+    )
+    args = parser.parse_args()
+
+    if args.file:
+        req_path = Path(args.file)
+        if not req_path.exists():
+            print(f"[ERROR] File not found: {req_path}")
+            return
+
+        solution = solve_project(req_path)
+        print(json.dumps(solution, indent=2))
+        return
+
+
     timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     results_path = RESULTS_DIR / timestamp
     results_path.mkdir(parents=True, exist_ok=True)
@@ -29,8 +49,9 @@ def main():
 
         with open(result_file, "w") as f:
             json.dump(solution, f, indent=2)
+        print(f"[SOLVED] project {project}")
 
-        print(f"Processed {project}: {results_path}")
+    print(f"[DONE] Results saved in {results_path}")
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     main()
