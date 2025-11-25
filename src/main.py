@@ -14,18 +14,19 @@ def solve_project(reqs_txt):
     project_name = reqs_txt.stem
     requirements = parse.load_reqs_txt(reqs_txt)
     dep_space = parse.get_dep_space(requirements)
+    # print(json.dumps(dep_space))
     solution = solver.solve(dep_space)
 
     return solution
 
 def main():
-    parser = argparse.ArgumentParser(description="Dependency Solver")
-    parser.add_argument(
+    arg_parser = argparse.ArgumentParser(description="Dependency Solver")
+    arg_parser.add_argument(
         "--file",
         type=str,
         help="Run solver on a specified requirements.txt file (path)",
     )
-    args = parser.parse_args()
+    args = arg_parser.parse_args()
 
     if args.file:
         req_path = Path(args.file)
@@ -34,7 +35,6 @@ def main():
             return
 
         solution = solve_project(req_path)
-        # print(json.dumps(solution, indent=2))
         return
 
 

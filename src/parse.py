@@ -34,7 +34,6 @@ def run_conda_cmd(package):
         'constrains': [utils.parse_constraint_str(s) for s in entry['constrains']],
     } for entry in data[package]]
 
-    print(json.dumps(extracted_data, indent=2))
     return extracted_data
 
 def get_dep_space(requirements):

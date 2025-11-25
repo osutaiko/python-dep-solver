@@ -27,10 +27,12 @@ def parse_constraint_str(s):
 
         conds = []
         for raw_cond in raw_conds:
+            raw_cond = raw_cond.strip().split(' ')[0]
+
             op, ver = startswith_list(raw_cond, INEQ_OPS)
-            if (not op):
-                print(f"[ERROR] Unrecognized operator in {raw_cond}")
-                continue
+            if not op:
+                op = "=="
+                ver = raw_cond
 
             conds.append({ 'op': op, 'ver': ver })
             
