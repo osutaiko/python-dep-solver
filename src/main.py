@@ -13,7 +13,7 @@ RESULTS_DIR = PROJECT_ROOT / "results"
 def solve_project(reqs_txt):
     requirements = parse.load_reqs_txt(reqs_txt)
     proj_constraints, dep_space = parse.parse_reqs(requirements)
-    print(json.dumps(proj_constraints), json.dumps(dep_space))
+    # print(json.dumps(proj_constraints), json.dumps(dep_space))
     solution = solver.solve(proj_constraints, dep_space)
 
     return solution

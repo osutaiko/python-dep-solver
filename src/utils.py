@@ -1,15 +1,15 @@
+import re
 from packaging.version import Version
 
-INEQ_OPS = ['==', '!=', '>=', '<=', '>', '<']
+def parse_raw_operator(raw_cond):
+    m = re.compile(r"^(==|!=|>=|<=|>|<)(.*)$").match(raw_cond)
+    if not m:
+        return None, None
+    op, ver = m.group(1), m.group(2)
+    return op, ver
 
 def is_conda_pkg(req):
     return "@" not in req and "://" not in req and not req.startswith("git+")
-
-def startswith_list(s, op_list):
-    for op in op_list:
-        if s.startswith(op):
-            return op, s[len(op):]
-    return None, []
 
 def expand_wildcard(ver):
     if not ver.endswith(".*"):
@@ -45,7 +45,7 @@ def parse_constraint_str(s):
     for raw_cond in raw_conds:
         raw_cond = raw_cond.strip().split(' ')[0]
 
-        op, ver = startswith_list(raw_cond, INEQ_OPS)
+        op, ver = parse_raw_operator(raw_cond)
         if not op:
             op = "=="
             ver = raw_cond
