@@ -34,7 +34,7 @@ def main():
             return
 
         solution = solve_project(req_path)
-        print(json.dumps(solution, indent=2))
+        # print(json.dumps(solution, indent=2))
         return
 
 
@@ -49,9 +49,9 @@ def main():
 
         with open(result_file, "w") as f:
             json.dump(solution, f, indent=2)
-        print(f"[SOLVED] project {project}")
+        print(f"[DEBUG] {project} solved")
 
-    print(f"[DONE] Results saved in {results_path}")
+    print(f"[DEBUG] Results saved in {results_path}")
 
 if __name__ == "__main__": 
     main()

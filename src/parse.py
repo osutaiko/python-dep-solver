@@ -3,6 +3,8 @@ import pathlib
 import re
 import json
 
+import utils
+
 def load_reqs_txt(path):
     deps = []
     with open(path, 'r') as file:
@@ -27,12 +29,12 @@ def run_conda_cmd(package):
     # print(result.stdout, result.stderr)
     data = json.loads(result.stdout)
     extracted_data = [{
-        'version': x['version'], 
-        'depends': x['depends'], 
-        'constrains': x['constrains'],
-    } for x in data[package]]
+        'version': entry['version'], 
+        'depends': [utils.parse_constraint_str(s) for s in entry['depends']], 
+        'constrains': [utils.parse_constraint_str(s) for s in entry['constrains']],
+    } for entry in data[package]]
 
-    # print(extracted_data)
+    print(json.dumps(extracted_data, indent=2))
     return extracted_data
 
 def get_dep_space(requirements):
