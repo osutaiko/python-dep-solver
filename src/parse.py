@@ -53,7 +53,7 @@ def parse_reqs(requirements):
         
         req_norm = re.sub(r"([<>=!~]=?|==)", r" \1", req_clean)
         pkg = re.split(r"[<>=!~]+", req_clean)[0].strip()
-        proj_constraints[pkg] = utils.parse_constraint_str(req_norm)
+        proj_constraints[pkg] = utils.parse_constraint_str(req_norm)['conds']
         dep_space[pkg] = run_conda_cmd(pkg)
 
     return proj_constraints, dep_space
