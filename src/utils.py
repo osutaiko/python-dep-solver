@@ -8,11 +8,25 @@ def startswith_list(s, op_list):
             return op, s[len(op):]
     return None, []
 
-def normalize_ver(v):
-    if v.endswith(".*"):
-        v = v[:-2] + ".0"
+def expand_wildcard(ver):
+    if not ver.endswith(".*"):
+        return None
+    
+    base = ver[:-2]
+    parts = base.split(".")
+    while len(parts) < 2:
+        parts.append("0")
+    
+    major = int(parts[0])
+    minor = int(parts[1])
 
-    return v
+    lower = f"{major}.{minor}.0"
+    upper = f"{major}.{minor+1}.0"
+
+    return [
+        { 'op': '>=', 'ver': lower },
+        { 'op': '<',  'ver': upper }
+    ]
 
 def parse_constraint_str(s):
     toks = s.split(' ', 1)
@@ -20,23 +34,25 @@ def parse_constraint_str(s):
     dep = toks[0]
 
     if len(toks) == 1:
-        conds = []
+        return { 'dep': dep, 'conds': [] }
 
-    elif len(toks) == 2:
-        raw_conds = toks[1].split(',')
+    raw_conds = toks[1].split(',')
+    conds = []
+    
+    for raw_cond in raw_conds:
+        raw_cond = raw_cond.strip().split(' ')[0]
 
-        conds = []
-        for raw_cond in raw_conds:
-            raw_cond = raw_cond.strip().split(' ')[0]
-
-            op, ver = startswith_list(raw_cond, INEQ_OPS)
-            if not op:
-                op = "=="
-                ver = raw_cond
-
+        op, ver = startswith_list(raw_cond, INEQ_OPS)
+        if not op:
+            op = "=="
+            ver = raw_cond
+        
+        wc = expand_wildcard(ver)
+        if wc:
+            conds.extend(wc)      
+        else:
             conds.append({ 'op': op, 'ver': ver })
             
-
     return { 'dep': dep, 'conds': conds }
 
 def cmp_v(v1, op, v2):
@@ -44,8 +60,8 @@ def cmp_v(v1, op, v2):
         print(f"[ERROR] op {op} not in INEQ_OPS")
         return False
 
-    v1 = Version(normalize_ver(v1))
-    v2 = Version(normalize_ver(v2))
+    v1 = Version(v1)
+    v2 = Version(v2)
 
     match op:
         case '==':
