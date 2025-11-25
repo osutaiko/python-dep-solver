@@ -2,6 +2,9 @@ from packaging.version import Version
 
 INEQ_OPS = ['==', '!=', '>=', '<=', '>', '<']
 
+def is_conda_pkg(req):
+    return "@" not in req and "://" not in req and not req.startswith("git+")
+
 def startswith_list(s, op_list):
     for op in op_list:
         if s.startswith(op):

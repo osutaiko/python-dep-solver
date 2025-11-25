@@ -24,34 +24,18 @@ def main():
     arg_parser.add_argument(
         "--file",
         type=str,
+        required=True,
         help="Run solver on a specified requirements.txt file (path)",
     )
     args = arg_parser.parse_args()
 
-    if args.file:
-        req_path = Path(args.file)
-        if not req_path.exists():
-            print(f"[ERROR] File not found: {req_path}")
-            return
-
-        solution = solve_project(req_path)
+    req_path = Path(args.file)
+    if not req_path.exists():
+        print(f"[ERROR] File not found: {req_path}")
         return
 
-
-    timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-    results_path = RESULTS_DIR / timestamp
-    results_path.mkdir(parents=True, exist_ok=True)
-
-    for reqs_txt in DATA_DIR.glob("*.txt"):
-        project = reqs_txt.stem
-        solution = solve_project(reqs_txt)
-        result_file = results_path / f"{project}.json"
-
-        with open(result_file, "w") as f:
-            json.dump(solution, f, indent=2)
-        print(f"[DEBUG] {project} solved")
-
-    print(f"[DEBUG] Results saved in {results_path}")
-
+    solution = solve_project(req_path)
+    print(json.dumps(solution, indent=2))
+    
 if __name__ == "__main__": 
     main()
