@@ -1,5 +1,12 @@
 import re
 from packaging.version import Version
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = PROJECT_ROOT / "data"
+RESULTS_DIR = PROJECT_ROOT / "results"
+
+INEQ_OPS = ["==", "!=", ">=", "<=", ">", "<"]
 
 def parse_raw_operator(raw_cond):
     m = re.compile(r"^(==|!=|>=|<=|>|<)(.*)$").match(raw_cond)
@@ -7,9 +14,6 @@ def parse_raw_operator(raw_cond):
         return None, None
     op, ver = m.group(1), m.group(2)
     return op, ver
-
-def is_conda_pkg(req):
-    return "@" not in req and "://" not in req and not req.startswith("git+")
 
 def expand_wildcard(ver):
     if not ver.endswith(".*"):
@@ -27,8 +31,8 @@ def expand_wildcard(ver):
     upper = f"{major}.{minor+1}.0"
 
     return [
-        { 'op': '>=', 'ver': lower },
-        { 'op': '<',  'ver': upper }
+        { "op": ">=", "ver": lower },
+        { "op": "<",  "ver": upper }
     ]
 
 def parse_constraint_str(s):
@@ -37,13 +41,13 @@ def parse_constraint_str(s):
     dep = toks[0]
 
     if len(toks) == 1:
-        return { 'dep': dep, 'conds': [] }
+        return dep, []
 
-    raw_conds = toks[1].split(',')
+    raw_conds = toks[1].split(",")
     conds = []
     
     for raw_cond in raw_conds:
-        raw_cond = raw_cond.strip().split(' ')[0]
+        raw_cond = raw_cond.strip().split(" ")[0]
 
         op, ver = parse_raw_operator(raw_cond)
         if not op:
@@ -54,9 +58,9 @@ def parse_constraint_str(s):
         if wc:
             conds.extend(wc)      
         else:
-            conds.append({ 'op': op, 'ver': ver })
+            conds.append({ "op": op, "ver": ver })
             
-    return { 'dep': dep, 'conds': conds }
+    return dep, conds
 
 def cmp_v(v1, op, v2):
     if op not in INEQ_OPS:
@@ -67,17 +71,17 @@ def cmp_v(v1, op, v2):
     v2 = Version(v2)
 
     match op:
-        case '==':
+        case "==":
             return v1 == v2
-        case '!=':
+        case "!=":
             return v1 != v2
-        case '>=':
+        case ">=":
             return v1 >= v2
-        case '<=':
+        case "<=":
             return v1 <= v2
-        case '>': 
+        case ">": 
             return v1 > v2
-        case '<':
+        case "<":
             return v1 < v2
 
     return False

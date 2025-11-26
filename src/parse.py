@@ -1,9 +1,20 @@
-import subprocess
-import pathlib
 import re
-import json
 
 import utils
+
+def extract_pkg_name(req):
+    req = req.split("@")[0]
+    req = re.sub(r"\[.*?\]", "", req)
+    req = req.strip()
+
+    m = re.split(r"([<>=!~]+.*)", req, maxsplit=1)
+    pkg = m[0].strip()
+
+    if len(m) > 1:
+        constraint_str = m[1].strip()
+    else:
+        constraint_str = ""
+    return pkg, constraint_str
 
 def load_reqs_txt(path):
     deps = []
@@ -15,46 +26,11 @@ def load_reqs_txt(path):
             deps.append(line)
     return deps
 
-def run_conda_cmd(package):
-    try:
-        result = subprocess.run(
-            ["conda", "run", "-n", "base", "conda", "search", package, "--info", "--json"],
-            capture_output=True,
-            text=True,
-        )
-    except:
-        print(f"[ERROR] conda search: {package} failed")
-        return []
-    
-    # print(result.stdout, result.stderr)
-    data = json.loads(result.stdout)
-
-    if package not in data:
-        print(f"[WARN] conda cannot find package: {package}")
-        return []
-    
-    extracted_data = [{
-        'version': entry['version'], 
-        'depends': [utils.parse_constraint_str(s) for s in entry['depends']], 
-        'constrains': [utils.parse_constraint_str(s) for s in entry['constrains']],
-    } for entry in data[package]]
-
-    return extracted_data
-
 def parse_reqs(requirements):
     proj_constraints = {}
-    dep_space = {}
-
     for req in requirements:
-        req_clean = re.sub(r"\[.*?\]", "", req).strip()
-        if not utils.is_conda_pkg(req_clean):
-            print(f"[WARNING] not a conda package: {req_clean}")
-            continue
-        
-        req_norm = re.sub(r"([<>=!~]=?|==)", r" \1", req_clean)
-        pkg = re.split(r"[<>=!~]+", req_clean)[0].strip()
-        proj_constraints[pkg] = utils.parse_constraint_str(req_norm)['conds']
-        dep_space[pkg] = run_conda_cmd(pkg)
-
-    return proj_constraints, dep_space
+        pkg, constraint_str = extract_pkg_name(req)
+        dep, conds = utils.parse_constraint_str(f"{pkg} {constraint_str}".strip())
+        proj_constraints[dep] = conds
+    return proj_constraints
     

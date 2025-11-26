@@ -1,22 +1,30 @@
 import argparse
 from pathlib import Path
-import datetime
 import json
 
 import parse
 import solver
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = PROJECT_ROOT / "data"
-RESULTS_DIR = PROJECT_ROOT / "results"
+def load_json(path):
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except Exception:
+        print(f"[ERROR] Failed to load JSON: {path}")
+        exit(1)
 
-def solve_project(reqs_txt):
+def solve_project(reqs_txt, dep_space):
     requirements = parse.load_reqs_txt(reqs_txt)
-    proj_constraints, dep_space = parse.parse_reqs(requirements)
-    # print(json.dumps(proj_constraints), json.dumps(dep_space))
-    solution = solver.solve(proj_constraints, dep_space)
+    proj_constraints = parse.parse_reqs(requirements)
+    # print(json.dumps(proj_constraints))
 
-    return solution
+    missing_pkgs = [pkg for pkg in proj_constraints if pkg not in dep_space]
+
+    if missing_pkgs:
+        print(f"[ERROR] Missing packages in dependancy space (run precompute.py first): {missing_pkgs}")
+        exit(1)
+
+    return solver.solve(proj_constraints, dep_space)
 
 def main():
     arg_parser = argparse.ArgumentParser(description="Dependency Solver")
@@ -24,7 +32,13 @@ def main():
         "--file",
         type=str,
         required=True,
-        help="Run solver on a specified requirements.txt file (path)",
+        help="Path to requirements.txt",
+    )
+    arg_parser.add_argument(
+        "--dep-space",
+        type=str,
+        required=True,
+        help="Path to dependency space JSON",
     )
     args = arg_parser.parse_args()
 
@@ -33,7 +47,10 @@ def main():
         print(f"[ERROR] File not found: {req_path}")
         return
 
-    solution = solve_project(req_path)
+    dep_space = load_json(args.dep_space)
+
+    solution = solve_project(req_path, dep_space)
+    print("Solution found!")
     print(json.dumps(solution, indent=2))
     
 if __name__ == "__main__": 

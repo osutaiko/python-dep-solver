@@ -1,0 +1,4 @@
+black==23.7.0
+clip @ git+https://github.com/openai/CLIP.git
+pandas>=1.5.0
+imageio[ffmpeg]
