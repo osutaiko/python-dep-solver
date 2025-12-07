@@ -35,14 +35,16 @@ def run_conda_cmd(package):
     data = json.loads(result.stdout)
 
     if package not in data:
-        return []
+        return [], []
     
     extracted_data = []
+    all_deps = set()
 
     for entry in data[package]:
         depends_dict = {}
         for dep, conds in (utils.parse_constraint_str(s) for s in entry["depends"]):
             depends_dict[dep] = conds
+            all_deps.add(dep)
 
         constrains_dict = {}
         for dep, conds in (utils.parse_constraint_str(s) for s in entry["constrains"]):
@@ -54,7 +56,7 @@ def run_conda_cmd(package):
             "constrains": constrains_dict,
         })
 
-    return extracted_data
+    return extracted_data, list(all_deps)
 
 
 def precompute():
@@ -65,14 +67,22 @@ def precompute():
 
     dep_space = {}
 
-    for pkg in packages:
-        print(f"Processing: {pkg}")
-        dep_space[pkg] = {}
+    deps_prc_queue = list(packages)
+    deps_done = set()
 
-        metadata = run_conda_cmd(pkg)
+    while deps_prc_queue:
+        pkg = deps_prc_queue.pop()
+        print(f"Processing: {pkg}")
+        if pkg in deps_done:
+            continue
+        deps_done.add(pkg)
+
+        metadata, child_deps = run_conda_cmd(pkg)
         if not metadata:
             print(f"[WARNING] {pkg}: no conda metadata")
             continue
+        
+        dep_space[pkg] = {}
 
         for m in metadata:
             ver = m["version"]
@@ -80,6 +90,9 @@ def precompute():
                 "depends": m["depends"],
                 "constrains": m["constrains"],
             }
+        for c in child_deps:
+            if c not in deps_done:
+                deps_prc_queue.append(c)
 
         time.sleep(0.05)
 
