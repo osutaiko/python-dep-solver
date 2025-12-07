@@ -1,6 +1,8 @@
 from collections import defaultdict, deque
 from packaging.version import Version
 import utils
+import json
+import os
 
 try:
     import networkx as nx
@@ -184,12 +186,18 @@ class DependencyGraph:
                 valid_versions = self.find_version_intersection(pkg, conditions)
 
                 if len(valid_versions) == 0:
-                    if pkg not in self.dep_space:
+                    in_dep_space = pkg in self.dep_space
+                    if not in_dep_space:
                         print(f"[COLLECTED] {pkg}: constraints collected (not in dep_space)")
                     else:
-                        print(f"[WARNING] {pkg}: no valid versions found")
+                        print(f"[WARNING] {pkg}: no valid versions found (in dep_space but constraints unsatisfiable)")
 
-                    self.resolved[pkg] = {'status': 'constrained', 'conditions': conditions, 'valid_versions': []}
+                    self.resolved[pkg] = {
+                        'status': 'constrained',
+                        'conditions': conditions,
+                        'valid_versions': [],
+                        'in_dep_space': in_dep_space
+                    }
                     self.remove_node(pkg)
                     made_progress = True
                 elif len(valid_versions) == 1:
@@ -296,7 +304,34 @@ class DependencyGraph:
         plt.close()
 
 
-def preprocess_dependencies(proj_constraints, dep_space, visualize=False, output_dir=None):
+def create_clean_dep_space(original_dep_space, resolved, remaining):
+    dep_space_clean = {}
+    fixed_versions = {}
+    constrained_versions = {}
+
+    for pkg, info in resolved.items():
+        if info['status'] == 'fixed':
+            fixed_versions[pkg] = info['version']
+
+    for pkg, info in resolved.items():
+        if info['status'] == 'constrained' and info.get('valid_versions'):
+            constrained_versions[pkg] = {
+                'valid_versions': info['valid_versions'],
+                'conditions': info['conditions']
+            }
+    for pkg, info in resolved.items():
+        if info['status'] == 'constrained' and not info.get('valid_versions'):
+            if info.get('in_dep_space') and pkg in original_dep_space:
+                dep_space_clean[pkg] = original_dep_space[pkg]
+
+    for pkg in remaining:
+        if pkg in original_dep_space:
+            dep_space_clean[pkg] = original_dep_space[pkg]
+
+    return dep_space_clean, fixed_versions, constrained_versions
+
+
+def preprocess_dependencies(proj_constraints, dep_space, visualize=False, output_dir=None, save_clean=True):
     """
     main
     """
@@ -317,9 +352,37 @@ def preprocess_dependencies(proj_constraints, dep_space, visualize=False, output
     if remaining:
         print(f"  {sorted(remaining)}")
 
-    # 최종 그래프도 시각화
+    dep_space_clean, fixed_versions, constrained_versions = create_clean_dep_space(
+        dep_space, resolved, remaining
+    )
+
+    print(f"\n[INFO] Created dep_space_clean:")
+    print(f"  Packages in dep_space_clean: {len(dep_space_clean)}")
+    print(f"  Fixed versions (excluded): {len(fixed_versions)}")
+    print(f"  Constrained versions (excluded): {len(constrained_versions)}")
+
+    if save_clean:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(script_dir)
+        data_dir = os.path.join(project_root, 'data')
+
+        clean_path = os.path.join(data_dir, 'dep_space_clean.json')
+        fixed_path = os.path.join(data_dir, 'fixed_versions.json')
+        constrained_path = os.path.join(data_dir, 'constrained_versions.json')
+
+        with open(clean_path, 'w') as f:
+            json.dump(dep_space_clean, f, indent=2)
+        print(f"\n[INFO] Saved dep_space_clean to {clean_path}")
+
+        with open(fixed_path, 'w') as f:
+            json.dump(fixed_versions, f, indent=2)
+        print(f"[INFO] Saved fixed_versions to {fixed_path}")
+
+        with open(constrained_path, 'w') as f:
+            json.dump(constrained_versions, f, indent=2)
+        print(f"[INFO] Saved constrained_versions to {constrained_path}")
+
     if visualize and output_dir:
-        import os
         final_graph_path = os.path.join(output_dir, "dependency_graph_final.png")
         print(f"[INFO] Saving final graph to {final_graph_path}")
         graph.visualize(output_path=final_graph_path, show_versions=False)
@@ -327,5 +390,8 @@ def preprocess_dependencies(proj_constraints, dep_space, visualize=False, output
     return {
         'resolved': resolved,
         'remaining': remaining,
+        'dep_space_clean': dep_space_clean,
+        'fixed_versions': fixed_versions,
+        'constrained_versions': constrained_versions,
         'graph': graph
     }
