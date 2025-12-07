@@ -21,11 +21,19 @@ def expand_wildcard(ver):
     
     base = ver[:-2]
     parts = base.split(".")
+    if any(p == "*" for p in parts):
+            return None
+    if len(parts) > 2:
+        return None
+
     while len(parts) < 2:
         parts.append("0")
-    
-    major = int(parts[0])
-    minor = int(parts[1])
+
+    try:
+        major = int(parts[0])
+        minor = int(parts[1])
+    except ValueError:
+        return None
 
     lower = f"{major}.{minor}.0"
     upper = f"{major}.{minor+1}.0"
