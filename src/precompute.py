@@ -4,14 +4,16 @@ import subprocess
 
 import utils
 import parse
+import sys
 
 REQ_TXTS_DIR = utils.DATA_DIR / "requirements"
 DEP_SPACE_PATH = utils.DATA_DIR / "dep_space.json"
 
 
-def load_all_packages():
+def load_all_packages(req_file=None):
     pkgs = set()
-    for req_file in REQ_TXTS_DIR.glob("*.txt"):
+    files = [utils.DATA_DIR / "requirements" / req_file] if req_file else REQ_TXTS_DIR.glob("*.txt")
+    for req_file in files:
         for line in open(req_file, "r"):
             line = line.strip()
             if not line or line.startswith("#") or line.startswith("-e "):
@@ -29,7 +31,7 @@ def run_conda_cmd(package):
         )
     except:
         print(f"[ERROR] conda search: {package} failed")
-        return []
+        return [], []
     
     # print(result.stdout, result.stderr)
     data = json.loads(result.stdout)
@@ -59,9 +61,12 @@ def run_conda_cmd(package):
     return extracted_data, list(all_deps)
 
 
-def precompute():
-    print("Loading packages in data/*.txt ...")
-    packages = load_all_packages()
+def precompute(req_file=None):
+    if req_file:
+        print(f"Loading packages in {req_file} ...")
+    else:
+        print("Loading packages in data/*.txt ...")
+    packages = load_all_packages(req_file)
 
     print(f"Found {len(packages)} packages")
 
@@ -102,4 +107,5 @@ def precompute():
 
 
 if __name__ == "__main__":
+    req_file = sys.argv[1] if len(sys.argv) > 1 else None
     precompute()
