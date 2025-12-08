@@ -1,0 +1,72 @@
+import argparse
+import json
+
+import utils
+
+
+def validate_solution(solution_path: str, dep_space_path: str):
+    print("Loading files...")
+    with open(solution_path, "r", encoding="utf-8") as f:
+        sol_data = json.load(f)
+    with open(dep_space_path, "r", encoding="utf-8") as f:
+        dep_space = json.load(f)
+
+    packages = sol_data.get("packages", {})
+    current_python_ver = sol_data.get("python_version", "3.8")
+
+    errors = []
+    print(f"🔍 Validating {len(packages)} packages against Dependency Space...")
+
+    for pkg_name, pkg_ver in packages.items():
+        if pkg_name not in dep_space:
+            errors.append(f"[{pkg_name}] Not found in dependency space keys.")
+            continue
+
+        if pkg_ver not in dep_space[pkg_name]:
+            errors.append(
+                f"[{pkg_name}] Version '{pkg_ver}' does not exist in dep_space."
+            )
+            continue
+
+        pkg_meta = dep_space[pkg_name][pkg_ver]
+        dependencies = pkg_meta.get("depends", {})
+
+        for dep_pkg, constraints in dependencies.items():
+            if dep_pkg == "python":
+                target_ver = current_python_ver
+            elif dep_pkg in packages:
+                target_ver = packages[dep_pkg]
+            else:
+                errors.append(
+                    f"[{pkg_name} {pkg_ver}] Requires missing package '{dep_pkg}'"
+                )
+                continue
+
+            for const in constraints:
+                op = const["op"]
+                req_ver = const["ver"]
+
+                if not utils.cmp_v(target_ver, op, req_ver):
+                    errors.append(
+                        f"❌ Conflict: [{pkg_name} {pkg_ver}] requires "
+                        f"'{dep_pkg} {op} {req_ver}', but found '{target_ver}'"
+                    )
+
+    if not errors:
+        print("\n Valid solution!")
+        return True
+    else:
+        print(f"\n❌ [FAILED] Found {len(errors)} conflicts.")
+        for e in errors:
+            print(e)
+        return False
+
+
+if __name__ == "__main__":
+    # python src/eval.py --file ga_solution.json --dep data/dep_space.json
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--file", required=True)
+    parser.add_argument("--dep", required=True)
+    args = parser.parse_args()
+
+    validate_solution(args.file, args.dep)
