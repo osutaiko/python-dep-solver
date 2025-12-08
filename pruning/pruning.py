@@ -325,11 +325,13 @@ def build_dep_space_from_requirements(proj_constraints, dep_space):
     return dep_space_req
 
 
-def create_clean_dep_space(original_dep_space, resolved, remaining):
+def create_clean_dep_space(original_dep_space, resolved, remaining, proj_constraints=None):
     dep_space_clean = {}
     fixed_versions = {}
     constrained_versions = {}
     precomputed_dep_space = {}
+
+    required_packages = set(proj_constraints.keys()) if proj_constraints else set()
 
     for pkg, info in resolved.items():
         if info['status'] == 'fixed':
@@ -355,6 +357,16 @@ def create_clean_dep_space(original_dep_space, resolved, remaining):
         if pkg in original_dep_space:
             dep_space_clean[pkg] = original_dep_space[pkg]
 
+    if proj_constraints:
+        for pkg in required_packages:
+            if pkg in precomputed_dep_space and pkg not in dep_space_clean:
+                dep_space_clean[pkg] = precomputed_dep_space[pkg]
+                del precomputed_dep_space[pkg]
+                if pkg in fixed_versions:
+                    del fixed_versions[pkg]
+                if pkg in constrained_versions:
+                    del constrained_versions[pkg]
+
     return dep_space_clean, fixed_versions, constrained_versions, precomputed_dep_space
 
 
@@ -369,9 +381,10 @@ def preprocess_dependencies(dep_space, proj_constraints=None, visualize=False, o
         output_dir: 출력 디렉토리
         save_clean: 파일 저장 여부
     """
-    # proj_constraints가 있으면 필요한 패키지만 추출
+    dep_space_req = None
     if proj_constraints:
-        dep_space = build_dep_space_from_requirements(proj_constraints, dep_space)
+        dep_space_req = build_dep_space_from_requirements(proj_constraints, dep_space)
+        dep_space = dep_space_req
 
     graph = DependencyGraph(dep_space,
                            visualize_initial=visualize,
@@ -381,7 +394,7 @@ def preprocess_dependencies(dep_space, proj_constraints=None, visualize=False, o
     remaining = graph.get_remaining_packages()
 
     dep_space_clean, fixed_versions, constrained_versions, precomputed_dep_space = create_clean_dep_space(
-        dep_space, resolved, remaining
+        dep_space, resolved, remaining, proj_constraints
     )
 
     if save_clean:
@@ -398,6 +411,11 @@ def preprocess_dependencies(dep_space, proj_constraints=None, visualize=False, o
         with open(precomputed_path, 'w') as f:
             json.dump(precomputed_dep_space, f, indent=2)
 
+        if dep_space_req is not None:
+            dep_space_req_path = os.path.join(data_dir, 'dep_space_req.json')
+            with open(dep_space_req_path, 'w') as f:
+                json.dump(dep_space_req, f, indent=2)
+
     if visualize and output_dir:
         final_graph_path = os.path.join(output_dir, "dependency_graph_final.png")
         graph.visualize(output_path=final_graph_path, show_versions=False)
@@ -409,5 +427,6 @@ def preprocess_dependencies(dep_space, proj_constraints=None, visualize=False, o
         'fixed_versions': fixed_versions,
         'constrained_versions': constrained_versions,
         'precomputed_dep_space': precomputed_dep_space,
+        'dep_space_req': dep_space_req,
         'graph': graph
     }

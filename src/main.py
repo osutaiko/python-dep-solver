@@ -36,6 +36,8 @@ def solve_project(reqs_txt, dep_space):
     )
 
     print(f"Pruning completed:")
+    if result['dep_space_req'] is not None:
+        print(f"  - dep_space_req.json: {len(result['dep_space_req'])} packages")
     print(f"  - dep_space_clean.json: {len(result['dep_space_clean'])} packages")
     print(f"  - precomputed.json: {len(result['precomputed_dep_space'])} packages")
     print(f"    (Fixed: {len(result['fixed_versions'])}, Constrained: {len(result['constrained_versions'])})")
