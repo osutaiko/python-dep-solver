@@ -1,0 +1,9 @@
+torch
+torchvision
+torchsummary
+pytorch-lightning==1.2.1
+comet-ml==3.3.5
+matplotlib
+numpy
+pandas
+scipy
