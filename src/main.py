@@ -1,6 +1,10 @@
 import argparse
 from pathlib import Path
 import json
+import sys
+
+sys.path.insert(0, str(Path(__file__).parent.parent / "pruning"))
+from main_pruning import run_pruning
 
 import parse
 import solver
@@ -24,7 +28,15 @@ def solve_project(reqs_txt, dep_space):
         print(f"[ERROR] Missing packages in dependancy space (run precompute.py first): {missing_pkgs}")
         exit(1)
 
-    return solver.solve(proj_constraints, dep_space)
+    print("Running pruning preprocessing...")
+    result = run_pruning(
+        proj_constraints=proj_constraints,
+        visualize=False,
+        save_files=False
+    )
+
+    dep_space_pruned = result['dep_space_clean']
+    return solver.solve(proj_constraints, dep_space_pruned)
 
 def main():
     arg_parser = argparse.ArgumentParser(description="Dependency Solver")
