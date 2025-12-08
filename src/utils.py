@@ -48,7 +48,7 @@ def expand_wildcard(ver):
 def parse_constraint_str(s):
     toks = s.split(" ", 1)
     toks = [t for t in toks if not t.startswith("*")]
-    dep = toks[0]
+    dep = toks[0].lower()
 
     if len(toks) == 1:
         return dep, []
@@ -63,9 +63,11 @@ def parse_constraint_str(s):
         if not op:
             op = "=="
             ver = raw_cond
+        ver = ver.lower()
 
         wc = expand_wildcard(ver)
         if wc:
+            wc = [{"op": w["op"], "ver": w["ver"].lower()} for w in wc]
             conds.extend(wc)
         else:
             conds.append({"op": op, "ver": ver})
