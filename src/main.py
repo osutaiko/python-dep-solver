@@ -32,8 +32,13 @@ def solve_project(reqs_txt, dep_space):
     result = run_pruning(
         proj_constraints=proj_constraints,
         visualize=False,
-        save_files=False
+        save_files=True
     )
+
+    print(f"Pruning completed:")
+    print(f"  - dep_space_clean.json: {len(result['dep_space_clean'])} packages")
+    print(f"  - precomputed.json: {len(result['precomputed_dep_space'])} packages")
+    print(f"    (Fixed: {len(result['fixed_versions'])}, Constrained: {len(result['constrained_versions'])})")
 
     dep_space_pruned = result['dep_space_clean']
     return solver.solve(proj_constraints, dep_space_pruned)
