@@ -1,6 +1,11 @@
 from collections import defaultdict, deque
 from packaging.version import Version
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 import utils
+
 import json
 import os
 
@@ -20,9 +25,8 @@ class DependencyGraph:
     dependency : edge
     """
 
-    def __init__(self, proj_constraints, dep_space, visualize_initial=False, output_dir=None):
+    def __init__(self, dep_space, visualize_initial=False, output_dir=None):
 
-        self.proj_constraints = proj_constraints
         self.dep_space = self._convert_dep_space_to_list(dep_space)
         self.graph = defaultdict(lambda: defaultdict(list))
         self.reverse_graph = defaultdict(lambda: defaultdict(list))
@@ -56,8 +60,7 @@ class DependencyGraph:
                         'depends': metadata['depends'],
                         'constrains': metadata.get('constrains', {})
                     })
-                except Exception as e:
-                    print(f"[WARNING] Invalid version {ver_str} for {pkg}: {e}")
+                except Exception:
                     continue
 
             version_list.sort(key=lambda x: x['version_obj'], reverse=True)
@@ -66,7 +69,7 @@ class DependencyGraph:
         return converted
 
     def _build_graph(self):
-        all_packages = set(self.proj_constraints.keys())
+        all_packages = set(self.dep_space.keys())
 
         queue = deque(all_packages)
         visited = set()
@@ -110,8 +113,6 @@ class DependencyGraph:
         package에 걸린 모든 제약 조건 수집
         """
         all_conditions = []
-        if pkg in self.proj_constraints:
-            all_conditions.extend(self.proj_constraints[pkg])
 
         if pkg in self.reverse_graph:
             for parent_pkg, dep_list in self.reverse_graph[pkg].items():
@@ -137,9 +138,15 @@ class DependencyGraph:
 
             satisfies_all = True
             for cond in conditions:
-                if not utils.cmp_v(ver_str, cond['op'], cond['ver']):
-                    satisfies_all = False
-                    break
+                if isinstance(cond.get('ver'), str) and cond['ver'].endswith('.*'):
+                    continue
+
+                try:
+                    if not utils.cmp_v(ver_str, cond['op'], cond['ver']):
+                        satisfies_all = False
+                        break
+                except Exception:
+                    continue
 
             if satisfies_all:
                 valid_versions.append(ver_str)
@@ -187,11 +194,6 @@ class DependencyGraph:
 
                 if len(valid_versions) == 0:
                     in_dep_space = pkg in self.dep_space
-                    if not in_dep_space:
-                        print(f"[COLLECTED] {pkg}: constraints collected (not in dep_space)")
-                    else:
-                        print(f"[WARNING] {pkg}: no valid versions found (in dep_space but constraints unsatisfiable)")
-
                     self.resolved[pkg] = {
                         'status': 'constrained',
                         'conditions': conditions,
@@ -201,12 +203,10 @@ class DependencyGraph:
                     self.remove_node(pkg)
                     made_progress = True
                 elif len(valid_versions) == 1:
-                    print(f"[RESOLVED] {pkg} -> {valid_versions[0]}")
                     self.resolved[pkg] = {'status': 'fixed', 'version': valid_versions[0]}
                     self.remove_node(pkg)
                     made_progress = True
                 else:
-                    print(f"[CONSTRAINED] {pkg}: {len(valid_versions)} valid versions")
                     self.resolved[pkg] = {
                         'status': 'constrained',
                         'conditions': conditions,
@@ -308,10 +308,13 @@ def create_clean_dep_space(original_dep_space, resolved, remaining):
     dep_space_clean = {}
     fixed_versions = {}
     constrained_versions = {}
+    precomputed_dep_space = {}
 
     for pkg, info in resolved.items():
         if info['status'] == 'fixed':
             fixed_versions[pkg] = info['version']
+            if pkg in original_dep_space:
+                precomputed_dep_space[pkg] = original_dep_space[pkg]
 
     for pkg, info in resolved.items():
         if info['status'] == 'constrained' and info.get('valid_versions'):
@@ -319,6 +322,9 @@ def create_clean_dep_space(original_dep_space, resolved, remaining):
                 'valid_versions': info['valid_versions'],
                 'conditions': info['conditions']
             }
+            if pkg in original_dep_space:
+                precomputed_dep_space[pkg] = original_dep_space[pkg]
+
     for pkg, info in resolved.items():
         if info['status'] == 'constrained' and not info.get('valid_versions'):
             if info.get('in_dep_space') and pkg in original_dep_space:
@@ -328,16 +334,16 @@ def create_clean_dep_space(original_dep_space, resolved, remaining):
         if pkg in original_dep_space:
             dep_space_clean[pkg] = original_dep_space[pkg]
 
-    return dep_space_clean, fixed_versions, constrained_versions
+    return dep_space_clean, fixed_versions, constrained_versions, precomputed_dep_space
 
 
-def preprocess_dependencies(proj_constraints, dep_space, visualize=False, output_dir=None, save_clean=True):
+def preprocess_dependencies(dep_space, visualize=False, output_dir=None, save_clean=True):
     """
     main
     """
     print("\n=== Starting Dependency Graph Preprocessing ===")
 
-    graph = DependencyGraph(proj_constraints, dep_space,
+    graph = DependencyGraph(dep_space,
                            visualize_initial=visualize,
                            output_dir=output_dir)
 
@@ -352,7 +358,7 @@ def preprocess_dependencies(proj_constraints, dep_space, visualize=False, output
     if remaining:
         print(f"  {sorted(remaining)}")
 
-    dep_space_clean, fixed_versions, constrained_versions = create_clean_dep_space(
+    dep_space_clean, fixed_versions, constrained_versions, precomputed_dep_space = create_clean_dep_space(
         dep_space, resolved, remaining
     )
 
@@ -360,6 +366,7 @@ def preprocess_dependencies(proj_constraints, dep_space, visualize=False, output
     print(f"  Packages in dep_space_clean: {len(dep_space_clean)}")
     print(f"  Fixed versions (excluded): {len(fixed_versions)}")
     print(f"  Constrained versions (excluded): {len(constrained_versions)}")
+    print(f"  Precomputed packages (Fixed + Constrained): {len(precomputed_dep_space)}")
 
     if save_clean:
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -367,20 +374,17 @@ def preprocess_dependencies(proj_constraints, dep_space, visualize=False, output
         data_dir = os.path.join(project_root, 'data')
 
         clean_path = os.path.join(data_dir, 'dep_space_clean.json')
-        fixed_path = os.path.join(data_dir, 'fixed_versions.json')
-        constrained_path = os.path.join(data_dir, 'constrained_versions.json')
+        precomputed_path = os.path.join(data_dir, 'precomputed.json')
 
         with open(clean_path, 'w') as f:
             json.dump(dep_space_clean, f, indent=2)
         print(f"\n[INFO] Saved dep_space_clean to {clean_path}")
+        print(f"  Contains: Remaining ({len(remaining)}) + Unsatisfiable packages")
 
-        with open(fixed_path, 'w') as f:
-            json.dump(fixed_versions, f, indent=2)
-        print(f"[INFO] Saved fixed_versions to {fixed_path}")
-
-        with open(constrained_path, 'w') as f:
-            json.dump(constrained_versions, f, indent=2)
-        print(f"[INFO] Saved constrained_versions to {constrained_path}")
+        with open(precomputed_path, 'w') as f:
+            json.dump(precomputed_dep_space, f, indent=2)
+        print(f"[INFO] Saved precomputed to {precomputed_path}")
+        print(f"  Contains: Fixed ({len(fixed_versions)}) + Constrained ({len(constrained_versions)}) packages with full dep_space")
 
     if visualize and output_dir:
         final_graph_path = os.path.join(output_dir, "dependency_graph_final.png")
@@ -393,5 +397,6 @@ def preprocess_dependencies(proj_constraints, dep_space, visualize=False, output
         'dep_space_clean': dep_space_clean,
         'fixed_versions': fixed_versions,
         'constrained_versions': constrained_versions,
+        'precomputed_dep_space': precomputed_dep_space,
         'graph': graph
     }
