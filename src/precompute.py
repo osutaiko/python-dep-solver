@@ -94,6 +94,8 @@ def precompute(req_file=None):
         metadata, child_deps = run_conda_cmd(pkg)
         if not metadata:
             print(f"[WARNING] {pkg}: no conda metadata")
+            if pkg not in dep_space:
+                dep_space[pkg] = {}
             continue
         
         dep_space[pkg] = {}
