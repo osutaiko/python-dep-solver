@@ -18,7 +18,7 @@ def load_all_packages(req_file=None):
             line = line.strip()
             if not line or line.startswith("#") or line.startswith("-e "):
                 continue
-            pkgs.add(parse.extract_pkg_name(line)[0])
+            pkgs.add(parse.extract_pkg_name(line)[0].lower())
     return sorted(pkgs)
 
 
