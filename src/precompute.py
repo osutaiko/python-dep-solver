@@ -62,24 +62,33 @@ def run_conda_cmd(package):
 
 
 def precompute(req_file=None):
+    # load existing dep_space
+    if DEP_SPACE_PATH.exists():
+        with open(DEP_SPACE_PATH, "r") as f:
+            dep_space = json.load(f)
+        print(f"Loaded existing dep_space with {len(dep_space)} packages")
+    else:
+        dep_space = {}
+
     if req_file:
         print(f"Loading packages in {req_file} ...")
     else:
         print("Loading packages in data/*.txt ...")
-    packages = load_all_packages(req_file)
 
+    packages = load_all_packages(req_file)
     print(f"Found {len(packages)} packages")
 
-    dep_space = {}
-
     deps_prc_queue = list(packages)
-    deps_done = set()
+    deps_done = set(dep_space.keys())
 
     while deps_prc_queue:
         pkg = deps_prc_queue.pop()
-        print(f"Processing: {pkg}")
+
         if pkg in deps_done:
+            # print(f"Skipping (cached): {pkg}")
             continue
+
+        print(f"Processing: {pkg}")
         deps_done.add(pkg)
 
         metadata, child_deps = run_conda_cmd(pkg)
