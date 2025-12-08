@@ -39,7 +39,6 @@ class DependencyGraph:
             import os
             os.makedirs(output_dir, exist_ok=True)
             initial_graph_path = os.path.join(output_dir, "dependency_graph_initial.png")
-            print(f"[INFO] Saving initial graph to {initial_graph_path}")
             self.visualize(output_path=initial_graph_path, show_versions=False)
 
     def _convert_dep_space_to_list(self, dep_space):
@@ -218,16 +217,6 @@ class DependencyGraph:
             if not made_progress:
                 break
 
-        print(f"\n[INFO] Simplification completed in {iterations} iterations")
-
-        fixed = [p for p in self.resolved.values() if p['status'] == 'fixed']
-        constrained_with_versions = [p for p in self.resolved.values() if p['status'] == 'constrained' and p.get('valid_versions')]
-        constrained_no_versions = [p for p in self.resolved.values() if p['status'] == 'constrained' and not p.get('valid_versions')]
-
-        print(f"[INFO] Fixed: {len(fixed)} packages")
-        print(f"[INFO] Constrained (with versions): {len(constrained_with_versions)} packages")
-        print(f"[INFO] Constrained (no versions in dep_space): {len(constrained_no_versions)} packages")
-
         return self.resolved
 
     def get_remaining_packages(self):
@@ -297,11 +286,43 @@ class DependencyGraph:
 
         if output_path:
             plt.savefig(output_path, dpi=150, bbox_inches='tight')
-            print(f"[INFO] Graph saved to {output_path}")
         else:
             plt.show()
 
         plt.close()
+
+
+def build_dep_space_from_requirements(proj_constraints, dep_space):
+    """
+    proj_constraints 로 새로운 dep_space 만들기
+    """
+    dep_space_req = {}
+    queue = deque(proj_constraints.keys())
+    visited = set()
+
+    while queue:
+        pkg = queue.popleft()
+
+        if pkg in visited:
+            continue
+
+        visited.add(pkg)
+
+        if pkg not in dep_space:
+            continue
+
+        dep_space_req[pkg] = dep_space[pkg]
+
+        for ver_str, metadata in dep_space[pkg].items():
+            for dep_pkg in metadata.get('depends', {}).keys():
+                if dep_pkg != 'python' and dep_pkg not in visited:
+                    queue.append(dep_pkg)
+
+            for const_pkg in metadata.get('constrains', {}).keys():
+                if const_pkg != 'python' and const_pkg not in visited:
+                    queue.append(const_pkg)
+
+    return dep_space_req
 
 
 def create_clean_dep_space(original_dep_space, resolved, remaining):
@@ -337,36 +358,31 @@ def create_clean_dep_space(original_dep_space, resolved, remaining):
     return dep_space_clean, fixed_versions, constrained_versions, precomputed_dep_space
 
 
-def preprocess_dependencies(dep_space, visualize=False, output_dir=None, save_clean=True):
+def preprocess_dependencies(dep_space, proj_constraints=None, visualize=False, output_dir=None, save_clean=True):
     """
     main
+
+    Args:
+        dep_space: 전체 dependency space
+        proj_constraints: optional, {pkg_name: [conditions]} 형태의 프로젝트 제약조건
+        visualize: 시각화 여부
+        output_dir: 출력 디렉토리
+        save_clean: 파일 저장 여부
     """
-    print("\n=== Starting Dependency Graph Preprocessing ===")
+    # proj_constraints가 있으면 필요한 패키지만 추출
+    if proj_constraints:
+        dep_space = build_dep_space_from_requirements(proj_constraints, dep_space)
 
     graph = DependencyGraph(dep_space,
                            visualize_initial=visualize,
                            output_dir=output_dir)
 
-    print(f"\nInitial graph:")
-    print(f"  Total packages: {len(set(graph.graph.keys()) | set(graph.reverse_graph.keys()))}")
-    print(f"  Leaf nodes: {len(graph.get_leaf_nodes())}")
-
     resolved = graph.simplify()
     remaining = graph.get_remaining_packages()
-
-    print(f"\nRemaining packages for solver: {len(remaining)}")
-    if remaining:
-        print(f"  {sorted(remaining)}")
 
     dep_space_clean, fixed_versions, constrained_versions, precomputed_dep_space = create_clean_dep_space(
         dep_space, resolved, remaining
     )
-
-    print(f"\n[INFO] Created dep_space_clean:")
-    print(f"  Packages in dep_space_clean: {len(dep_space_clean)}")
-    print(f"  Fixed versions (excluded): {len(fixed_versions)}")
-    print(f"  Constrained versions (excluded): {len(constrained_versions)}")
-    print(f"  Precomputed packages (Fixed + Constrained): {len(precomputed_dep_space)}")
 
     if save_clean:
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -378,17 +394,12 @@ def preprocess_dependencies(dep_space, visualize=False, output_dir=None, save_cl
 
         with open(clean_path, 'w') as f:
             json.dump(dep_space_clean, f, indent=2)
-        print(f"\n[INFO] Saved dep_space_clean to {clean_path}")
-        print(f"  Contains: Remaining ({len(remaining)}) + Unsatisfiable packages")
 
         with open(precomputed_path, 'w') as f:
             json.dump(precomputed_dep_space, f, indent=2)
-        print(f"[INFO] Saved precomputed to {precomputed_path}")
-        print(f"  Contains: Fixed ({len(fixed_versions)}) + Constrained ({len(constrained_versions)}) packages with full dep_space")
 
     if visualize and output_dir:
         final_graph_path = os.path.join(output_dir, "dependency_graph_final.png")
-        print(f"[INFO] Saving final graph to {final_graph_path}")
         graph.visualize(output_path=final_graph_path, show_versions=False)
 
     return {

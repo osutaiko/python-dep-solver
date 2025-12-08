@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 import pruning
 
-def run_pruning(dep_space_path=None, output_dir=None, visualize=True, save_files=True):
+def run_pruning(dep_space_path=None, proj_constraints=None, output_dir=None, visualize=True, save_files=True):
     if dep_space_path is None:
         dep_space_path = Path(__file__).parent.parent / "data" / "dep_space.json"
     else:
@@ -26,6 +26,7 @@ def run_pruning(dep_space_path=None, output_dir=None, visualize=True, save_files
 
     result = pruning.preprocess_dependencies(
         dep_space,
+        proj_constraints=proj_constraints,
         visualize=visualize,
         output_dir=str(output_dir),
         save_clean=save_files
