@@ -341,9 +341,6 @@ def create_clean_dep_space(original_dep_space, resolved, remaining, proj_constra
     else:
         required_packages = set(required_packages)
 
-    print(f"[DEBUG] resolved keys: {set(resolved.keys())}")
-    print(f"[DEBUG] remaining: {remaining}")
-
     for pkg, info in resolved.items():
         if info['status'] == 'fixed':
             fixed_versions[pkg] = info['version']
