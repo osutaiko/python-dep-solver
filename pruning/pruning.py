@@ -369,13 +369,8 @@ def create_clean_dep_space(original_dep_space, resolved, remaining, proj_constra
             dep_space_clean[pkg] = original_dep_space[pkg]
 
     if proj_constraints:
-        print(f"[DEBUG] required_packages: {required_packages}")
-        print(f"[DEBUG] precomputed_dep_space keys: {set(precomputed_dep_space.keys())}")
-        print(f"[DEBUG] dep_space_clean keys before: {set(dep_space_clean.keys())}")
-
         for pkg in required_packages:
             if pkg not in dep_space_clean:
-                # Check precomputed first
                 if pkg in precomputed_dep_space:
                     dep_space_clean[pkg] = precomputed_dep_space[pkg]
                     del precomputed_dep_space[pkg]
@@ -383,18 +378,13 @@ def create_clean_dep_space(original_dep_space, resolved, remaining, proj_constra
                         del fixed_versions[pkg]
                     if pkg in constrained_versions:
                         del constrained_versions[pkg]
-                # Otherwise get from original_dep_space (packages not in graph)
                 elif pkg in original_dep_space:
                     dep_space_clean[pkg] = original_dep_space[pkg]
 
-        print(f"[DEBUG] dep_space_clean keys after: {set(dep_space_clean.keys())}")
-
-    # Clean up dependencies: remove dependencies not in dep_space_clean
     packages_in_clean = set(dep_space_clean.keys())
     for pkg, versions in dep_space_clean.items():
         for ver, metadata in versions.items():
             depends = metadata.get('depends', {})
-            # Remove dependencies that are not in dep_space_clean
             deps_to_remove = [dep for dep in depends if dep not in packages_in_clean]
             for dep in deps_to_remove:
                 del depends[dep]
