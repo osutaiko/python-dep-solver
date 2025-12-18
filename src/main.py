@@ -20,6 +20,7 @@ def load_json(path):
 def solve_project(reqs_txt, dep_space):
     requirements = parse.load_reqs_txt(reqs_txt)
     proj_constraints = parse.parse_reqs(requirements)
+    required_packages = parse.get_all_package_names(requirements)
     # print(json.dumps(proj_constraints))
 
     missing_pkgs = [pkg for pkg in proj_constraints if pkg not in dep_space]
@@ -31,6 +32,7 @@ def solve_project(reqs_txt, dep_space):
     print("Running pruning preprocessing...")
     result = run_pruning(
         proj_constraints=proj_constraints,
+        required_packages=required_packages,
         visualize=False,
         save_files=True
     )

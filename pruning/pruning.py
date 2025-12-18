@@ -182,13 +182,14 @@ class DependencyGraph:
                 break
 
             made_progress = False
+            unresolved_leaf_nodes = set()
 
             for pkg in leaf_nodes:
                 if pkg in self.resolved:
                     continue
-                
+
                 conditions = self.get_constraints_for_package(pkg)
-                
+
                 valid_versions = self.find_version_intersection(pkg, conditions)
 
                 if len(valid_versions) == 0:
@@ -199,7 +200,7 @@ class DependencyGraph:
                         'valid_versions': [],
                         'in_dep_space': in_dep_space
                     }
-                    self.remove_node(pkg)
+                    unresolved_leaf_nodes.add(pkg)
                     made_progress = True
                 elif len(valid_versions) == 1:
                     self.resolved[pkg] = {'status': 'fixed', 'version': valid_versions[0]}
@@ -215,6 +216,10 @@ class DependencyGraph:
                     made_progress = True
 
             if not made_progress:
+                break
+
+            current_leaves = self.get_leaf_nodes()
+            if current_leaves and all(leaf in self.resolved for leaf in current_leaves):
                 break
 
         return self.resolved
@@ -325,13 +330,19 @@ def build_dep_space_from_requirements(proj_constraints, dep_space):
     return dep_space_req
 
 
-def create_clean_dep_space(original_dep_space, resolved, remaining, proj_constraints=None):
+def create_clean_dep_space(original_dep_space, resolved, remaining, proj_constraints=None, required_packages=None):
     dep_space_clean = {}
     fixed_versions = {}
     constrained_versions = {}
     precomputed_dep_space = {}
 
-    required_packages = set(proj_constraints.keys()) if proj_constraints else set()
+    if required_packages is None:
+        required_packages = set(proj_constraints.keys()) if proj_constraints else set()
+    else:
+        required_packages = set(required_packages)
+
+    print(f"[DEBUG] resolved keys: {set(resolved.keys())}")
+    print(f"[DEBUG] remaining: {remaining}")
 
     for pkg, info in resolved.items():
         if info['status'] == 'fixed':
@@ -358,25 +369,47 @@ def create_clean_dep_space(original_dep_space, resolved, remaining, proj_constra
             dep_space_clean[pkg] = original_dep_space[pkg]
 
     if proj_constraints:
+        print(f"[DEBUG] required_packages: {required_packages}")
+        print(f"[DEBUG] precomputed_dep_space keys: {set(precomputed_dep_space.keys())}")
+        print(f"[DEBUG] dep_space_clean keys before: {set(dep_space_clean.keys())}")
+
         for pkg in required_packages:
-            if pkg in precomputed_dep_space and pkg not in dep_space_clean:
-                dep_space_clean[pkg] = precomputed_dep_space[pkg]
-                del precomputed_dep_space[pkg]
-                if pkg in fixed_versions:
-                    del fixed_versions[pkg]
-                if pkg in constrained_versions:
-                    del constrained_versions[pkg]
+            if pkg not in dep_space_clean:
+                # Check precomputed first
+                if pkg in precomputed_dep_space:
+                    dep_space_clean[pkg] = precomputed_dep_space[pkg]
+                    del precomputed_dep_space[pkg]
+                    if pkg in fixed_versions:
+                        del fixed_versions[pkg]
+                    if pkg in constrained_versions:
+                        del constrained_versions[pkg]
+                # Otherwise get from original_dep_space (packages not in graph)
+                elif pkg in original_dep_space:
+                    dep_space_clean[pkg] = original_dep_space[pkg]
+
+        print(f"[DEBUG] dep_space_clean keys after: {set(dep_space_clean.keys())}")
+
+    # Clean up dependencies: remove dependencies not in dep_space_clean
+    packages_in_clean = set(dep_space_clean.keys())
+    for pkg, versions in dep_space_clean.items():
+        for ver, metadata in versions.items():
+            depends = metadata.get('depends', {})
+            # Remove dependencies that are not in dep_space_clean
+            deps_to_remove = [dep for dep in depends if dep not in packages_in_clean]
+            for dep in deps_to_remove:
+                del depends[dep]
 
     return dep_space_clean, fixed_versions, constrained_versions, precomputed_dep_space
 
 
-def preprocess_dependencies(dep_space, proj_constraints=None, visualize=False, output_dir=None, save_clean=True):
+def preprocess_dependencies(dep_space, proj_constraints=None, required_packages=None, visualize=False, output_dir=None, save_clean=True):
     """
     main
 
     Args:
         dep_space: 전체 dependency space
         proj_constraints: optional, {pkg_name: [conditions]} 형태의 프로젝트 제약조건
+        required_packages: optional, requirements.txt에 있는 모든 패키지 이름 리스트
         visualize: 시각화 여부
         output_dir: 출력 디렉토리
         save_clean: 파일 저장 여부
@@ -394,7 +427,7 @@ def preprocess_dependencies(dep_space, proj_constraints=None, visualize=False, o
     remaining = graph.get_remaining_packages()
 
     dep_space_clean, fixed_versions, constrained_versions, precomputed_dep_space = create_clean_dep_space(
-        dep_space, resolved, remaining, proj_constraints
+        dep_space, resolved, remaining, proj_constraints, required_packages
     )
 
     if save_clean:
