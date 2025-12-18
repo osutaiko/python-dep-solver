@@ -10,7 +10,7 @@ import utils
 import parse
 
 REQ_TXTS_DIR = utils.DATA_DIR / "requirements"
-DEP_SPACE_PYPI_PATH = utils.DATA_DIR / "dep_space_pypi.json"
+DEP_SPACE_PYPI_PATH = utils.DATA_DIR / "dep_space_pypi2.json"
 LOGS_DIR = utils.PROJECT_ROOT / "logs"
 
 
@@ -55,6 +55,7 @@ def load_all_packages(req_file=None):
 def fetch_single_version_deps(package_name, version):
     """
     단일 버전의 의존성 정보를 가져오는 헬퍼 함수 (병렬 처리용)
+    Runtime dependencies만 추출 (개발 의존성 제외)
     """
     try:
         requires_dist = utils.get_pypi_version_dependencies(package_name, version)
@@ -66,6 +67,9 @@ def fetch_single_version_deps(package_name, version):
         deps_set = set()
 
         for req_str in requires_dist:
+            if "extra ==" in req_str:
+                continue
+
             if ";" in req_str:
                 req_str = req_str.split(";")[0].strip()
 
@@ -152,6 +156,7 @@ def fetch_pypi_package_metadata(package_name, max_workers=15):
 def precompute_pypi(req_file=None, max_depth=None, enable_logging=True, max_workers=15):
     """
     PyPI를 사용하여 dependency space 생성 (병렬 처리 버전)
+    Runtime dependencies만 포함 (개발 의존성 제외)
     """
     logger = None
     if enable_logging:
@@ -167,7 +172,7 @@ def precompute_pypi(req_file=None, max_depth=None, enable_logging=True, max_work
         if DEP_SPACE_PYPI_PATH.exists():
             with open(DEP_SPACE_PYPI_PATH, "r") as f:
                 dep_space = json.load(f)
-            print(f"Loaded existing dep_space_pypi with {len(dep_space)} packages")
+            print(f"Loaded existing dep_space_pypi2 with {len(dep_space)} packages")
         else:
             dep_space = {}
 
@@ -260,6 +265,7 @@ def precompute_pypi(req_file=None, max_depth=None, enable_logging=True, max_work
 
         print(f"\n{'='*60}")
         print(f"Starting parallel processing with {max_workers} workers")
+        print(f"FILTERING: Excluding dev dependencies (extra == ...)")
         print(f"{'='*60}\n")
 
         processed_count = 0
@@ -339,7 +345,7 @@ def precompute_pypi(req_file=None, max_depth=None, enable_logging=True, max_work
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="PyPI를 사용하여 dependency space 생성 (병렬 처리 버전)")
+    parser = argparse.ArgumentParser(description="PyPI를 사용하여 dependency space 생성 (Runtime deps only)")
     parser.add_argument(
         "--file",
         type=str,
@@ -366,12 +372,13 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    print("Starting PyPI dependency space precomputation (Parallel Version)...")
+    print("Starting PyPI dependency space precomputation (Runtime deps only)...")
     print(f"Configuration:")
     print(f"  Requirements file: {args.file if args.file else 'All .txt files'}")
     print(f"  Max depth: {args.max_depth if args.max_depth else 'Unlimited'}")
     print(f"  Workers: {args.workers}")
     print(f"  Logging: {'Disabled' if args.no_log else 'Enabled'}")
+    print(f"  Filtering: Excluding dev dependencies (extra == ...)")
     print()
 
     precompute_pypi(
