@@ -7,3 +7,12 @@ A metaheuristic Python dependency solver.
 2. `$ python precompute.py` - Precompute dependency space
 3. `$ cd src` - Navigate to src/ directory
 4. `$ python main.py --file REQTXT_PATH --dep-space ../data/dep_space.json` - Run GA solver
+
+    Example:
+   ```bash
+   python src/main.py \
+     --file data/requirements/NeurIPS/2023/BELLE.txt \
+     --dep-space data/dep_space_pypi2.json
+
+## Evaluation
+`python src/eval.py --file results/ga6_test_strong_detailed.json --dep data/dep_space_pypi2.json`
