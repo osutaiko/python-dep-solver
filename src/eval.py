@@ -81,7 +81,7 @@ def validate_solution(solution_path: str, dep_space_path: str):
                     try:
                         if not utils.cmp_v2(target_ver, exp_op, exp_ver):
                             errors.append(
-                                f"❌ Conflict: [{pkg_name} {pkg_ver}] requires "
+                                f"Conflict: [{pkg_name} {pkg_ver}] requires "
                                 f"'{dep_pkg} {op} {req_ver}', but found '{target_ver}'"
                             )
                             break
@@ -92,7 +92,7 @@ def validate_solution(solution_path: str, dep_space_path: str):
         print("\n Valid solution!")
         return True
     else:
-        print(f"\n❌ [FAILED] Found {len(errors)} conflicts.")
+        print(f"[FAILED] Found {len(errors)} conflicts.")
         for e in errors:
             print(e)
         return False
