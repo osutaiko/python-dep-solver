@@ -1,0 +1,67 @@
+{
+  "ml-collections": [
+    {
+      "op": "==",
+      "ver": "0.1.0"
+    }
+  ],
+  "tensorflow-gan": [
+    {
+      "op": "==",
+      "ver": "2.0.0"
+    }
+  ],
+  "tensorflow_io": [],
+  "tensorflow_datasets": [
+    {
+      "op": "==",
+      "ver": "3.1.0"
+    }
+  ],
+  "tensorflow": [
+    {
+      "op": "==",
+      "ver": "2.4.0"
+    }
+  ],
+  "tensorflow-addons": [
+    {
+      "op": "==",
+      "ver": "0.12.0"
+    }
+  ],
+  "tensorboard": [
+    {
+      "op": "==",
+      "ver": "2.4.0"
+    }
+  ],
+  "tensorflow-probability": [
+    {
+      "op": "==",
+      "ver": "0.12"
+    }
+  ],
+  "absl-py": [
+    {
+      "op": "==",
+      "ver": "0.10.0"
+    }
+  ],
+  "torch": [
+    {
+      "op": ">=",
+      "ver": "1.7.0"
+    }
+  ],
+  "torchvision": [],
+  "ninja": [],
+  "scipy": [],
+  "numpy": [],
+  "matplotlib": [],
+  "seaborn": [],
+  "pandas": [],
+  "celluloid": [],
+  "prdc": [],
+  "jaxlib": []
+}

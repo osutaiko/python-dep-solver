@@ -1,0 +1,66 @@
+{
+  "autoflake": [],
+  "colorama": [
+    {
+      "op": "==",
+      "ver": "0.3.7"
+    }
+  ],
+  "Cython": [
+    {
+      "op": "==",
+      "ver": "0.27.3"
+    }
+  ],
+  "future": [],
+  "ipython": [],
+  "isort": [],
+  "loguru": [
+    {
+      "op": "==",
+      "ver": "0.4.1"
+    }
+  ],
+  "matplotlib": [],
+  "numba": [
+    {
+      "op": "==",
+      "ver": "0.45.0"
+    }
+  ],
+  "numpy": [
+    {
+      "op": "==",
+      "ver": "1.16.0"
+    }
+  ],
+  "opencv-python": [],
+  "pandas": [],
+  "pillow": [],
+  "pycocotools": [],
+  "pylint": [],
+  "scikit-image": [],
+  "scipy": [
+    {
+      "op": "==",
+      "ver": "1.2.1"
+    }
+  ],
+  "shapely": [
+    {
+      "op": "==",
+      "ver": "1.7.0"
+    }
+  ],
+  "tensorboard": [],
+  "tqdm": [],
+  "wget": [],
+  "yacs": [],
+  "yapf": [
+    {
+      "op": "==",
+      "ver": "0.28.0"
+    }
+  ],
+  "pre-commit": []
+}

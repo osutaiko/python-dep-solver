@@ -1,0 +1,22 @@
+{
+  "torchvision": [],
+  "gym": [
+    {
+      "op": ">=",
+      "ver": "0.21.0"
+    }
+  ],
+  "tensorboard": [],
+  "tqdm": [],
+  "hydra-core": [],
+  "numpy": [],
+  "pandas": [],
+  "opencv-python": [],
+  "pygame": [],
+  "xformers": [
+    {
+      "op": ">=",
+      "ver": "0.0.3"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "torch": [],
+  "torchvision": [],
+  "torchsummary": [],
+  "pytorch-lightning": [
+    {
+      "op": "==",
+      "ver": "1.2.1"
+    }
+  ],
+  "comet-ml": [
+    {
+      "op": "==",
+      "ver": "3.3.5"
+    }
+  ],
+  "matplotlib": [],
+  "numpy": [],
+  "pandas": [],
+  "scipy": []
+}

@@ -1,0 +1,79 @@
+{
+  "av": [
+    {
+      "op": "==",
+      "ver": "11.0.0"
+    }
+  ],
+  "einops": [],
+  "flashy": [
+    {
+      "op": ">=",
+      "ver": "0.0.1"
+    }
+  ],
+  "hydra-core": [
+    {
+      "op": ">=",
+      "ver": "1.1"
+    }
+  ],
+  "hydra_colorlog": [],
+  "julius": [],
+  "num2words": [],
+  "numpy": [
+    {
+      "op": "<",
+      "ver": "2.0.0"
+    }
+  ],
+  "sentencepiece": [],
+  "spacy": [
+    {
+      "op": "==",
+      "ver": "3.7.6"
+    }
+  ],
+  "torch": [
+    {
+      "op": "==",
+      "ver": "2.1.0"
+    }
+  ],
+  "huggingface_hub": [],
+  "tqdm": [],
+  "transformers": [
+    {
+      "op": ">=",
+      "ver": "4.31.0"
+    }
+  ],
+  "xformers": [
+    {
+      "op": "<",
+      "ver": "0.0.23"
+    }
+  ],
+  "demucs": [],
+  "librosa": [],
+  "soundfile": [],
+  "gradio": [],
+  "torchmetrics": [],
+  "encodec": [],
+  "protobuf": [],
+  "torchvision": [
+    {
+      "op": "==",
+      "ver": "0.16.0"
+    }
+  ],
+  "torchtext": [
+    {
+      "op": "==",
+      "ver": "0.16.0"
+    }
+  ],
+  "pesq": [],
+  "pystoi": [],
+  "torchdiffeq": []
+}

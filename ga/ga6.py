@@ -161,11 +161,11 @@ def fitness(
     """
     python_ver, pkg_versions = decode_individual(individual, package_names, gene_choices)
 
-    MISSING_DEP_PENALTY = 0.5
-    CONFLICT_PENALTY = 3.0
+    #MISSING_DEP_PENALTY = 0.5
+    CONFLICT_PENALTY = 12.0
     CONSTRAIN_PENALTY = 3.0
-    INSTALLED_REWARD = 1.0
-    REQUIRED_MISSING_PENALTY = 500.0
+    INSTALLED_REWARD = 10.0
+    #REQUIRED_MISSING_PENALTY = 500.0
 
     missing_dep = 0
     conflicts = 0
@@ -218,12 +218,18 @@ def fitness(
         if pkg_versions.get(pkg) is None
     )
 
+    #score = (
+    #    INSTALLED_REWARD * installed
+    #    - MISSING_DEP_PENALTY * missing_dep
+    #    - CONFLICT_PENALTY * conflicts
+    #    - CONSTRAIN_PENALTY * constrain_conflicts
+    #    - REQUIRED_MISSING_PENALTY * missing_required
+    #)
+
     score = (
         INSTALLED_REWARD * installed
-        - MISSING_DEP_PENALTY * missing_dep
         - CONFLICT_PENALTY * conflicts
         - CONSTRAIN_PENALTY * constrain_conflicts
-        - REQUIRED_MISSING_PENALTY * missing_required
     )
 
     # Hard constraints 패널티 (강화된 버전)
@@ -261,7 +267,7 @@ def fitness(
                 # 범위 조건 미충족 (>= 등)
                 hard_constraint_penalty += 1e6
 
-    score -= hard_constraint_penalty
+    #score -= hard_constraint_penalty
     return score
 
 

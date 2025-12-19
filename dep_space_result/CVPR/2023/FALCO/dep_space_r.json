@@ -1,0 +1,18 @@
+{
+  "torch": [],
+  "torchvision": [],
+  "ipython": [],
+  "ipykernel": [],
+  "ipywidgets": [],
+  "numpy": [],
+  "scikit-learn": [],
+  "scikit-image": [],
+  "Pillow": [],
+  "matplotlib": [],
+  "tqdm": [],
+  "opencv-python-headless": [],
+  "urllib3": [],
+  "requests": [],
+  "scipy": [],
+  "ninja": []
+}
