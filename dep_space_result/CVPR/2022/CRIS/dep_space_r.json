@@ -1,0 +1,12 @@
+{
+  "wandb": [],
+  "lmdb": [],
+  "pyarrow": [],
+  "regex": [],
+  "ftfy": [],
+  "loguru": [],
+  "pycocotools": [],
+  "matplotlib": [],
+  "tqdm": [],
+  "pickle5": []
+}

@@ -1,0 +1,56 @@
+{
+  "torch": [
+    {
+      "op": "==",
+      "ver": "1.8.0"
+    }
+  ],
+  "torchvision": [
+    {
+      "op": "==",
+      "ver": "0.9.0"
+    }
+  ],
+  "pandas": [],
+  "addict": [],
+  "sklearn": [],
+  "opencv-python": [],
+  "pytorch_warmup": [],
+  "scikit-image": [],
+  "tqdm": [],
+  "p_tqdm": [],
+  "imgaug": [
+    {
+      "op": ">=",
+      "ver": "0.4.0"
+    }
+  ],
+  "Shapely": [
+    {
+      "op": "==",
+      "ver": "1.7.0"
+    }
+  ],
+  "ujson": [
+    {
+      "op": "==",
+      "ver": "1.35"
+    }
+  ],
+  "yapf": [],
+  "pathspec": [],
+  "timm": [],
+  "mmcv": [
+    {
+      "op": "==",
+      "ver": "1.2.5"
+    }
+  ],
+  "albumentations": [
+    {
+      "op": "==",
+      "ver": "0.4.6"
+    }
+  ],
+  "ptflops": []
+}

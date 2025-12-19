@@ -1,0 +1,23 @@
+{
+  "torch": [
+    {
+      "op": "==",
+      "ver": "1.12"
+    }
+  ],
+  "tqdm": [],
+  "networkx": [],
+  "graph-tool": [
+    {
+      "op": "==",
+      "ver": "2.45"
+    }
+  ],
+  "igraph": [
+    {
+      "op": ">=",
+      "ver": "0.10"
+    }
+  ],
+  "livelossplot": []
+}

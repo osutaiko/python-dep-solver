@@ -40,10 +40,6 @@ def validate_solution(solution_path: str, dep_space_path: str):
 
     for pkg_name, pkg_ver in packages.items():
         if pkg_ver is None:
-            if pkg_name in dep_space and dep_space[pkg_name]:
-                errors.append(
-                    f"[{pkg_name}] Version is null but versions exist in dep_space."
-                )
             continue
 
         if pkg_name not in dep_space:

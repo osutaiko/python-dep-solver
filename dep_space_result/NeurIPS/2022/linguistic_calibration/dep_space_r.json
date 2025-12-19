@@ -1,0 +1,63 @@
+{
+  "anthropic": [
+    {
+      "op": "==",
+      "ver": "0.21.3"
+    }
+  ],
+  "datasets": [
+    {
+      "op": "==",
+      "ver": "2.18.0"
+    }
+  ],
+  "einops": [],
+  "nltk": [],
+  "accelerate": [
+    {
+      "op": "==",
+      "ver": "0.27.2"
+    }
+  ],
+  "bitsandbytes": [
+    {
+      "op": "==",
+      "ver": "0.42.0"
+    }
+  ],
+  "tabulate": [],
+  "transformers": [
+    {
+      "op": "==",
+      "ver": "4.39.2"
+    }
+  ],
+  "statsmodels": [],
+  "tiktoken": [
+    {
+      "op": "==",
+      "ver": "0.6.0"
+    }
+  ],
+  "pandas": [],
+  "matplotlib": [],
+  "markdown": [],
+  "scikit-learn": [],
+  "sentencepiece": [],
+  "wandb": [],
+  "fire": [],
+  "openai": [
+    {
+      "op": "==",
+      "ver": "0.27.2"
+    }
+  ],
+  "jupyter": [],
+  "notebook": [],
+  "sentence_transformers": [
+    {
+      "op": "==",
+      "ver": "2.6.1"
+    }
+  ]
+}

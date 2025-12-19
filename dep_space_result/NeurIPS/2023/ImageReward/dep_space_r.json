@@ -1,0 +1,15 @@
+{
+  "torch": [],
+  "deepspeed": [],
+  "tqdm": [],
+  "lmdb": [],
+  "filelock": [],
+  "sentencepiece": [],
+  "mpi4py": [],
+  "tensorboardX": [
+    {
+      "op": "==",
+      "ver": "1.8"
+    }
+  ]
+}
