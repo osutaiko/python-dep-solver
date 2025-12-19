@@ -14,5 +14,8 @@ A metaheuristic Python dependency solver.
      --file data/requirements/NeurIPS/2023/BELLE.txt \
      --dep-space data/dep_space_pypi2.json
 
+Each experiment’s GA result is saved under the `ga_result/` directory.
+
 ## Evaluation
 `python src/eval.py --file results/ga6_test_strong_detailed.json --dep data/dep_space_pypi2.json`
+
