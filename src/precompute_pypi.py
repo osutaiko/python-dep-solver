@@ -10,28 +10,28 @@ import utils
 import parse
 
 REQ_TXTS_DIR = utils.DATA_DIR / "requirements"
-DEP_SPACE_PYPI_PATH = utils.DATA_DIR / "dep_space_pypi2.json"
+DEP_SPACE_PYPI_PATH = utils.DATA_DIR / "dep_space.json"
 LOGS_DIR = utils.PROJECT_ROOT / "logs"
 
 
-class DualLogger:
-    """콘솔과 파일에 동시에 로그를 출력하는 클래스"""
-
-    def __init__(self, log_file):
-        self.terminal = sys.stdout
-        self.log = open(log_file, 'a', encoding='utf-8')
-
-    def write(self, message):
-        self.terminal.write(message)
-        self.log.write(message)
-        self.log.flush()
-
-    def flush(self):
-        self.terminal.flush()
-        self.log.flush()
-
-    def close(self):
-        self.log.close()
+# class DualLogger:
+#     """콘솔과 파일에 동시에 로그를 출력하는 클래스"""
+#
+#     def __init__(self, log_file):
+#         self.terminal = sys.stdout
+#         self.log = open(log_file, 'a', encoding='utf-8')
+#
+#     def write(self, message):
+#         self.terminal.write(message)
+#         self.log.write(message)
+#         self.log.flush()
+#
+#     def flush(self):
+#         self.terminal.flush()
+#         self.log.flush()
+#
+#     def close(self):
+#         self.log.close()
 
 
 def load_all_packages(req_file=None):
@@ -158,21 +158,21 @@ def precompute_pypi(req_file=None, max_depth=None, enable_logging=True, max_work
     PyPI를 사용하여 dependency space 생성 (병렬 처리 버전)
     Runtime dependencies만 포함 (개발 의존성 제외)
     """
-    logger = None
-    if enable_logging:
-        LOGS_DIR.mkdir(exist_ok=True)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        log_filename = f"precompute_pypi2_{timestamp}.log"
-        log_path = LOGS_DIR / log_filename
-        logger = DualLogger(log_path)
-        sys.stdout = logger
-        print(f"[LOG] Logging to: {log_path}\n")
+    # logger = None
+    # if enable_logging:
+    #     LOGS_DIR.mkdir(exist_ok=True)
+    #     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    #     log_filename = f"precompute_pypi_{timestamp}.log"
+    #     log_path = LOGS_DIR / log_filename
+    #     logger = DualLogger(log_path)
+    #     sys.stdout = logger
+    #     print(f"[LOG] Logging to: {log_path}\n")
 
     try:
         if DEP_SPACE_PYPI_PATH.exists():
             with open(DEP_SPACE_PYPI_PATH, "r") as f:
                 dep_space = json.load(f)
-            print(f"Loaded existing dep_space_pypi2 with {len(dep_space)} packages")
+            print(f"Loaded existing dep_space with {len(dep_space)} packages")
         else:
             dep_space = {}
 
@@ -336,10 +336,11 @@ def precompute_pypi(req_file=None, max_depth=None, enable_logging=True, max_work
         print(f"{'='*60}")
 
     finally:
-        if logger:
-            sys.stdout = logger.terminal
-            logger.close()
-            print(f"\nLog saved to: {log_path}")
+        pass
+        # if logger:
+        #     sys.stdout = logger.terminal
+        #     logger.close()
+        #     print(f"\nLog saved to: {log_path}")
 
 
 if __name__ == "__main__":
