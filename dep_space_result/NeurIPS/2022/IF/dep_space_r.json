@@ -1,0 +1,25 @@
+{
+  "tqdm": [],
+  "numpy": [],
+  "torch": [
+    {
+      "op": "<",
+      "ver": "2.0.0"
+    }
+  ],
+  "torchvision": [],
+  "omegaconf": [],
+  "matplotlib": [],
+  "Pillow": [
+    {
+      "op": ">=",
+      "ver": "9.2.0"
+    }
+  ],
+  "huggingface_hub": [
+    {
+      "op": ">=",
+      "ver": "0.13.2"
+    }
+  ]
+}

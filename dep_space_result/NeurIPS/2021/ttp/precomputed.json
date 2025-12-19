@@ -1,0 +1,5648 @@
+{
+  "rfc3987": {
+    "1.3.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.5": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "dataclasses": {
+    "0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "pprintpp": {
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "chardet": {
+    "5.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "5.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "5.0.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "click-completion": {
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.1": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "pkgutil-resolve-name": {
+    "0.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.0.0a0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.10": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "better-exceptions-fork": {
+    "0.1.8.post1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1.post5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.8.post3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.8.post2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1.post4": {
+      "depends": {
+        "ansimarkup": [
+          {
+            "op": ">=",
+            "ver": "1.3.0"
+          }
+        ],
+        "pygments": [
+          {
+            "op": ">=",
+            "ver": "2.2.0"
+          }
+        ],
+        "colorama": []
+      },
+      "constrains": {}
+    },
+    "0.2.1.post6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1.post3": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "backports.tempfile": {
+    "1.0rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "functools32": {
+    "3.2.3-1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.2.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.2.3-2": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "cached-property": {
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "appdirs": {
+    "1.4.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.3": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "cloudpickle": {
+    "0.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "pytz": {
+    "2007c": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2005m": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2004d": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2005a": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2005e": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2004b.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2004a": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2006p": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2005i": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2005k": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2007d": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2005r": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2006g": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2004b": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2006j": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2007f": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2007g": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2007k": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2007i": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2008c": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2008b": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009d": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2008h": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009a": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009e": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2008i": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2008a": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009g": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2008g": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009i": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009j": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009f": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009n": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009l": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009p": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009u": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2009r": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2010b": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2010e": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2010g": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2011b": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2010l": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2011d": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2011c": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2011e": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2011g": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2010k": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2010h": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2010o": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2011j": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2011k": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2011n": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2011h": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2012b": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2012c": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2012d": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2012f": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2012g": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2012h": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2012j": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2013.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2013.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2013.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2013b": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2013d": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2014.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2014.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2014.10": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2014.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2014.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2014.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2014.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2015.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2015.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2015.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2014.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2015.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2016.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2016.10": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2016.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2016.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2016.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2013.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2016.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2016.6.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2016.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2017.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2021.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2018.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2017.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2018.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2018.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2018.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2018.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2018.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2019.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2019.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2019.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2020.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2020.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2020.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2021.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2023.3.post1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2024.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2024.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2025.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.7.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2023.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2023.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2023.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2025.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.4": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "propcache": {
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.0.0.dev0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "repoze.lru": {
+    "0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "backports.os": {
+    "0.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "olefile": {
+    "0.47": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.41": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.46": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.47.dev4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.44": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.43": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.45": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.42.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.45.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.40": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "scandir": {
+    "0.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.10.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.9.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "js-regex": {
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "shellingham": {
+    "1.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0.dev1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0.dev0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5.0.post1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5.2": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "mdurl": {
+    "0.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.0.1": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "locket": {
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "pathlib": {
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.97": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "future": {
+    "0.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.0.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.10.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.10.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.12.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.11.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.11.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.11.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.11.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.10.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.11.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.12.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.12.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.12.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.12.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.13.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.13.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.18.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.14.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.18.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.14.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.15.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.14.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.14.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.15.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.17.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.17.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.16.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.18.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.18.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.15.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "fonttools": {
+    "3.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0b1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.12.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.13.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.12.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.11.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.13.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.10.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.14.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.15.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.15.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.16.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.2.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.18.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.17.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.20.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.20.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.21.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.19.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.21.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.21.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.22.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.23.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.24.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.24.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.24.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.26.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.25.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.27.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.27.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.28.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.29.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.29.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.31.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.32.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.30.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.33.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.34.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.34.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.35.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.34.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.35.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.36.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.35.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.37.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.37.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.37.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.37.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.39.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.38.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.41.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.41.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.40.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.41.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.42.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.43.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.43.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.43.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.6.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.6.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.44.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.6.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.8.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.9.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.9.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.9.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.10.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.10.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.10.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.11.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.12.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.12.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.15.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.13.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.14.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.16.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.16.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.17.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.17.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.18.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.18.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.18.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.19.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.19.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.2.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.2.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.20.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.2.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.21.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.21.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.22.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.22.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.23.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.23.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.24.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.24.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.24.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.24.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.25.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.25.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.25.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.26.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.26.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.27.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.26.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.28.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.27.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.28.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.28.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.28.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.28.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.28.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.29.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.29.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.24.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.30.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.31.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.34.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.31.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.31.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.32.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.33.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.33.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.33.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.33.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.34.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.34.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.34.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.35.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.34.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.36.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.37.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.37.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.37.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.37.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.38.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.38.1.dev0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.37.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.39.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.39.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.39.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.39.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.39.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.4.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.4.2.dev0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.40.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.41.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.4.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.41.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.42.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.43.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.42.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.43.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.44.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.44.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.44.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.45.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.46.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.45.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.47.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.47.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.48.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.49.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.53.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.50.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.51.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.52.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.52.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.53.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.52.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.55.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.55.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.54.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.54.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.55.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.55.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.57.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.55.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.55.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.58.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.58.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.55.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.58.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.55.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.58.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.55.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.56.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.58.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.58.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.59.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.60.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.59.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.59.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.60.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.60.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.61.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.61.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.7.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.8.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.8.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.9.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "backports.tarfile": {
+    "1.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "toolz": {
+    "0.10.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.11.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.11.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.12.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.12.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.11.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.12.1a0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.1a0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.1": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "tzdata": {
+    "1.2016.5a1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2020.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2021.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2016.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2021.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2020.1rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2021.2.post0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2020.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2016.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2016.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2020.1rc0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2020.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2020.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2020.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2021.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2021.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2021.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2024.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2023.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2025.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2025.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2023.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2023.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2023.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2022.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2024.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2025.3": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "colorama": {
+    "0.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.15": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.11": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.12": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.17": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.13": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.16": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.10": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.18": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.14": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.5rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.6rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.6": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "importlib": {
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.4": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "win32-setctime": {
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "jaraco.structures": {
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "tomli": {
+    "0.2.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.10": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.2": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "multiprocessing": {
+    "2.6.0-0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.6.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.6.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.6.1.1": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "backports.functools-lru-cache": {
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.6.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.6.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.6.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.6.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.6.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.6.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "contextlib2": {
+    "21.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.0.post1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.5": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "enum34": {
+    "0.9.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.12": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.15": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.17": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.13": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.16": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.14": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.20": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.11": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.18": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.23": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.19": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.21": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.22": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.10": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.2": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "typing": {
+    "3.10.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.6.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.6.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.4.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.5.0b1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.4.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.6.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.5.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.5.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.5.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.5.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.6.1": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "autocommand": {
+    "2.1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.2.2": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "ordereddict": {
+    "1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "pygments": {
+    "0.10": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.11": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.11.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.6rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.10.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.11.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.11.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.12.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.11.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.17.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.18.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.19.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.19.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.13.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.16.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.15.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.14.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.15.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.16.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.17.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.17.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.19.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.4.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.5.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.6.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.7.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.7.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.7.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.7.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.7.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.8.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.8.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.9.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "argparse": {
+    "1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "rpds-py": {
+    "0.10.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.10.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.10.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.12.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.11.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.14.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.13.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.13.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.10.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.14.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.10.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.15.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.13.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.10.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.15.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.18.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.16.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.16.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.20.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.17.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.10": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.19.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.19.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.18.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.20.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.21.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.22.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.23.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.25.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.27.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.29.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.27.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.28.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.30.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.22.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.23.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.22.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.24.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.25.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.26.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.10": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.11": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.12": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.9.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.7": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "configparser": {
+    "3.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.2.0r2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.0": {
+      "depends": {
+        "ordereddict": []
+      },
+      "constrains": {}
+    },
+    "3.3.0r2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.2.0r1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.5.0b1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.5.2": {
+      "depends": {
+        "ordereddict": []
+      },
+      "constrains": {}
+    },
+    "3.7.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.3.0r1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.5.3": {
+      "depends": {
+        "ordereddict": []
+      },
+      "constrains": {}
+    },
+    "3.5.0b2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.1": {
+      "depends": {
+        "ordereddict": []
+      },
+      "constrains": {}
+    },
+    "3.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.2.0r3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "5.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.8.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "5.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "5.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "5.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "6.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "5.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "6.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "7.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "7.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "7.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "7.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "5.3.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "futures": {
+    "2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.2.0": {
+      "depends": {
+        "multiprocessing": []
+      },
+      "constrains": {}
+    },
+    "2.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.6": {
+      "depends": {
+        "multiprocessing": []
+      },
+      "constrains": {}
+    },
+    "2.1.5": {
+      "depends": {
+        "multiprocessing": []
+      },
+      "constrains": {}
+    },
+    "3.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.1.1.post1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.2.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "zhon": {
+    "1.1.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.0": {
+      "depends": {
+        "appdirs": []
+      },
+      "constrains": {}
+    },
+    "0.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.1": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "partd": {
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.8": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "0.3.9": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "0.3.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.7": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.10": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "0.3.3": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "0.3.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.5": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "0.3.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "1.4.0": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "1.3.0": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "1.4.1": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "1.2.0": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    },
+    "1.4.2": {
+      "depends": {
+        "locket": [],
+        "toolz": []
+      },
+      "constrains": {}
+    }
+  },
+  "ansimarkup": {
+    "0.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.0": {
+      "depends": {
+        "colorama": []
+      },
+      "constrains": {}
+    },
+    "2.0.0": {
+      "depends": {
+        "colorama": []
+      },
+      "constrains": {}
+    },
+    "1.5.0": {
+      "depends": {
+        "colorama": []
+      },
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.4.1": {
+      "depends": {
+        "colorama": []
+      },
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "commonmark": {
+    "0.5.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.5.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.6.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.7.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.8.1": {
+      "depends": {
+        "future": []
+      },
+      "constrains": {}
+    },
+    "0.9.1": {
+      "depends": {
+        "future": [
+          {
+            "op": ">=",
+            "ver": "0.14.0"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.9.0": {
+      "depends": {
+        "future": []
+      },
+      "constrains": {}
+    },
+    "0.7.5": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "wcwidth": {
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.1.7": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.13": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.8": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.10": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.1.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.9": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.11": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.2.14": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.5": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.2.12": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.2.2": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.2.4": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.2.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.3": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.2.9": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.2.8": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.2.7": {
+      "depends": {
+        "backports.functools-lru-cache": [
+          {
+            "op": ">=",
+            "ver": "1.2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    }
+  },
+  "typing_extensions": {
+    "3.10.0.2": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.7.4"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "3.7.4": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.7.4"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "3.10.0.0": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.7.4"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "3.10.0.1": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.7.4"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "3.7.4.1": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.7.4"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "3.6.6": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.6.2"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "3.7.4.2": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.7.4"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "3.6.2": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.6.2"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "3.7.4.3": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.7.4"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "4.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.6.5": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.6.2"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "4.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.7.2": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.6.2"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "3.6.2.1": {
+      "depends": {
+        "typing": [
+          {
+            "op": ">=",
+            "ver": "3.6.2"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "4.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.10.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.1.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.10.0rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.11.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.12.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.11.0rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.12.0a2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.12.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.13.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.13.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.12.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.12.0rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.13.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.13.0rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.14.0rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.14.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.15.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.14.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.15.0rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.4.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.3.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.6.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.5.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.6.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.6.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.7.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.6.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.7.0rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.7.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.8.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.8.0rc1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.9.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.9.0rc1": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "tokenize-rt": {
+    "1.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "5.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.2.0": {
+      "depends": {
+        "typing": []
+      },
+      "constrains": {}
+    },
+    "4.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "5.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "2.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "3.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "4.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "5.2.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "6.0.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "6.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "6.2.0": {
+      "depends": {},
+      "constrains": {}
+    }
+  },
+  "future-fstrings": {
+    "0.1.1": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "0.1.0": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.4.3": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "0.4.0": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "0.4.2": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "0.4.5": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "0.2.0": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "0.4.1": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "0.2.1": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "0.4.4": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "1.0.0": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {
+        "tokenize-rt": []
+      },
+      "constrains": {}
+    },
+    "1.2.0": {
+      "depends": {
+        "tokenize-rt": [
+          {
+            "op": ">=",
+            "ver": "3"
+          }
+        ]
+      },
+      "constrains": {}
+    }
+  },
+  "hanzidentifier": {
+    "1.0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.1.0": {
+      "depends": {
+        "zhon": [
+          {
+            "op": ">=",
+            "ver": "1.1.3"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "1.0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "1.3.0": {
+      "depends": {
+        "zhon": [
+          {
+            "op": "==",
+            "ver": "~=2.1"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "1.2.0": {
+      "depends": {
+        "zhon": [
+          {
+            "op": "==",
+            "ver": "~=2.0"
+          }
+        ]
+      },
+      "constrains": {}
+    }
+  },
+  "dragonmapper": {
+    "0.2.3": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.7": {
+      "depends": {
+        "hanzidentifier": [
+          {
+            "op": "==",
+            "ver": "~=1.2"
+          }
+        ],
+        "zhon": [
+          {
+            "op": "==",
+            "ver": "~=2.0"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.2.4": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.3.0": {
+      "depends": {
+        "hanzidentifier": [
+          {
+            "op": "==",
+            "ver": "~=1.2"
+          }
+        ],
+        "zhon": [
+          {
+            "op": "==",
+            "ver": "~=2.0"
+          }
+        ]
+      },
+      "constrains": {}
+    },
+    "0.2.6": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.5": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.1": {
+      "depends": {},
+      "constrains": {}
+    },
+    "0.2.2": {
+      "depends": {},
+      "constrains": {}
+    }
+  }
+}

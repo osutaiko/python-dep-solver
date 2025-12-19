@@ -1,0 +1,20 @@
+{
+  "imageio": [],
+  "matplotlib": [],
+  "numpy": [],
+  "pandas": [],
+  "pillow": [],
+  "scipy": [],
+  "termcolor": [],
+  "tqdm": [],
+  "gin-config": [
+    {
+      "op": "==",
+      "ver": "0.3.0"
+    }
+  ],
+  "gpustat": [],
+  "psutil": [],
+  "tensorboardx": [],
+  "kornia": []
+}

@@ -1,0 +1,16 @@
+{
+  "torch": [
+    {
+      "op": ">=",
+      "ver": "1.8.0"
+    }
+  ],
+  "fvcore": [],
+  "pycocotools": [],
+  "omegaconf": [],
+  "cloudpickle": [],
+  "torchvision": [],
+  "tensorboard": [],
+  "jsonlines": [],
+  "json_lines": []
+}

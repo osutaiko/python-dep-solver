@@ -2,6 +2,7 @@ from collections import defaultdict, deque
 from packaging.version import Version
 import sys
 from pathlib import Path
+import copy
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 import utils
@@ -345,7 +346,7 @@ def create_clean_dep_space(original_dep_space, resolved, remaining, proj_constra
         if info['status'] == 'fixed':
             fixed_versions[pkg] = info['version']
             if pkg in original_dep_space:
-                precomputed_dep_space[pkg] = original_dep_space[pkg]
+                precomputed_dep_space[pkg] = copy.deepcopy(original_dep_space[pkg])
 
     for pkg, info in resolved.items():
         if info['status'] == 'constrained' and info.get('valid_versions'):
@@ -354,16 +355,16 @@ def create_clean_dep_space(original_dep_space, resolved, remaining, proj_constra
                 'conditions': info['conditions']
             }
             if pkg in original_dep_space:
-                precomputed_dep_space[pkg] = original_dep_space[pkg]
+                precomputed_dep_space[pkg] = copy.deepcopy(original_dep_space[pkg])
 
     for pkg, info in resolved.items():
         if info['status'] == 'constrained' and not info.get('valid_versions'):
             if info.get('in_dep_space') and pkg in original_dep_space:
-                dep_space_clean[pkg] = original_dep_space[pkg]
+                dep_space_clean[pkg] = copy.deepcopy(original_dep_space[pkg])
 
     for pkg in remaining:
         if pkg in original_dep_space:
-            dep_space_clean[pkg] = original_dep_space[pkg]
+            dep_space_clean[pkg] = copy.deepcopy(original_dep_space[pkg])
 
     if proj_constraints:
         for pkg in required_packages:
@@ -376,7 +377,7 @@ def create_clean_dep_space(original_dep_space, resolved, remaining, proj_constra
                     if pkg in constrained_versions:
                         del constrained_versions[pkg]
                 elif pkg in original_dep_space:
-                    dep_space_clean[pkg] = original_dep_space[pkg]
+                    dep_space_clean[pkg] = copy.deepcopy(original_dep_space[pkg])
 
     packages_in_clean = set(dep_space_clean.keys())
     for pkg, versions in dep_space_clean.items():

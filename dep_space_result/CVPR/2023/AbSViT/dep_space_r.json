@@ -1,0 +1,15 @@
+{
+  "timm": [
+    {
+      "op": "==",
+      "ver": "0.4.12"
+    }
+  ],
+  "einops": [],
+  "kornia": [],
+  "tqdm": [],
+  "opencv-python": [],
+  "scikit-image": [],
+  "Wand": [],
+  "termcolor": []
+}

@@ -1,0 +1,21 @@
+{
+  "pybind11": [],
+  "six": [],
+  "regex": [],
+  "numpy": [
+    {
+      "op": "==",
+      "ver": "1.24.4"
+    }
+  ],
+  "protobuf": [
+    {
+      "op": "==",
+      "ver": "3.20.1"
+    }
+  ],
+  "tensorboardX": [],
+  "transformers": [],
+  "sentencepiece": [],
+  "nltk": []
+}

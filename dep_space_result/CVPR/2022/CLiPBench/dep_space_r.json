@@ -1,0 +1,34 @@
+{
+  "torch": [
+    {
+      "op": ">=",
+      "ver": "1.8.1"
+    }
+  ],
+  "torchvision": [
+    {
+      "op": ">=",
+      "ver": "0.8.9"
+    }
+  ],
+  "tqdm": [
+    {
+      "op": ">=",
+      "ver": "2"
+    }
+  ],
+  "open_clip_torch": [
+    {
+      "op": ">=",
+      "ver": "0.2.1"
+    }
+  ],
+  "pycocoevalcap": [],
+  "webdataset": [
+    {
+      "op": ">=",
+      "ver": "0.2.31"
+    }
+  ],
+  "transformers": []
+}

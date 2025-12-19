@@ -1,0 +1,24 @@
+{
+  "einops": [],
+  "einops-exts": [],
+  "transformers": [
+    {
+      "op": ">=",
+      "ver": "4.28.1"
+    }
+  ],
+  "torch": [
+    {
+      "op": "==",
+      "ver": "2.0.1"
+    }
+  ],
+  "pillow": [],
+  "open_clip_torch": [
+    {
+      "op": ">=",
+      "ver": "2.16.0"
+    }
+  ],
+  "sentencepiece": []
+}

@@ -1,0 +1,17 @@
+{
+  "numpy": [],
+  "llvmlite": [],
+  "numba": [],
+  "torch": [
+    {
+      "op": ">=",
+      "ver": "1.9"
+    }
+  ],
+  "tensorboardX": [],
+  "easydict": [],
+  "pyyaml": [],
+  "scikit-image": [],
+  "tqdm": [],
+  "torchvision": []
+}
