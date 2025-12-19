@@ -6,7 +6,6 @@ import utils
 
 
 def parse_version_constraint(op, ver):
-    """Handle cases where ver contains operator (data quality issue) or ~= operator."""
     match = re.match(r"^(~=|==|!=|>=|<=|>|<)(.+)$", ver)
     if match:
         op = match.group(1)
@@ -36,7 +35,7 @@ def validate_solution(solution_path: str, dep_space_path: str):
     current_python_ver = sol_data.get("python_version", "3.8")
 
     errors = []
-    print(f"Validating {len(packages)} packages against Dependency Space...")
+    print(f"Validating {len(packages)} packages against Dependency Space")
 
     for pkg_name, pkg_ver in packages.items():
         if pkg_ver is None:
