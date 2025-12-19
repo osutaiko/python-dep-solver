@@ -100,6 +100,34 @@ def cmp_v(v1, op, v2):
     return False
 
 
+def cmp_v2(v1, op, v2):
+    if op not in INEQ_OPS:
+        print(f"[ERROR] op {op} not in INEQ_OPS")
+        return False
+
+    v1 = Version(v1)
+    v2 = Version(v2)
+
+    v1_base = Version(v1.base_version)
+    v2_base = Version(v2.base_version)
+
+    match op:
+        case "==":
+            return v1_base == v2_base
+        case "!=":
+            return v1_base != v2_base
+        case ">=":
+            return v1_base >= v2_base
+        case "<=":
+            return v1_base <= v2_base
+        case ">":
+            return v1_base > v2_base
+        case "<":
+            return v1_base < v2_base
+
+    return False
+
+
 def get_pypi_all_versions(package_name):
     url = f"https://pypi.org/pypi/{package_name}/json"
     response = requests.get(url)
